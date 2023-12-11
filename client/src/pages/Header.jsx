@@ -1,11 +1,23 @@
+import { faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 const Header = () => {
   return (
     <div className="header">
+        <div className="social-links">
+            <div className="social">
+                <div className="links">
+                    <FontAwesomeIcon icon={faTwitter} />
+                    <FontAwesomeIcon icon={faFacebook} />
+                    <FontAwesomeIcon icon={faWhatsapp} />
+                </div> 
+            </div>
+        </div>
             <nav>
                 <div className="logo">
-                    <h2>Info Tech</h2>
+                    <img src='../../images/infotectlogo.jpg' alt='logo' />
                 </div>
                 <div className="links">
                     <div className="other-link">
@@ -13,7 +25,7 @@ const Header = () => {
                     <Link to="">About</Link>
                     <Link to="">Courses</Link>
                     <Link to="">Contact</Link>
-                    <Link to="">Portal Login</Link>
+                    <Link  className='portal' to="">Portal Login</Link>
                     </div>
                     <div className="apply-link">
                         <Link  className ='apply-now' to="">Apply Now</Link>
