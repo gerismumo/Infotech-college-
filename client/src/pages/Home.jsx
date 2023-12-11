@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
+import Footer from './Footer';
 import Header from './Header';
 
 const Home = () => {
@@ -52,6 +53,33 @@ const Home = () => {
           isMounted = false;
         };
       }, [initialText]);
+
+      const courses = [{
+        id: 1,
+        name: 'Certificate in Computer Studies',
+        image: '../../images/computerStudis.jpg'
+      },
+      {
+        id: 2,
+        name: 'Diploma in Human Resources',
+        image: '../../images/human.jpg',
+      },
+      {
+        id: 3,
+        name: 'Certificate in Secretarial',
+        image: '../../images/secretarial.jpg',
+      },
+      {
+        id:4,
+        name: 'Diploma in Business Management',
+        image: '../../images/businessmanagemnet.jpg',
+      },
+      {
+        id: 5,
+        name: 'Certificate in Digital Marketing',
+        image: '../../images/Digitalmarket.jpg'
+      }
+    ]
       
   return (
     <>
@@ -107,13 +135,24 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="courses-info">
-                <div className="course-card">
-                    
+            <div className="courses-data">
+                <div className="courses-info">
+                    {courses.map((course) => (
+                        <div key={course.id}className="course-card">
+                            <div className="course-image">
+                                <img src={course.image} alt="" />
+                            </div>
+                            <div className="course-name">
+                                <p>{course.name}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
+            
         </div>
     </div>
+    <Footer />
     </>
     
   )

@@ -106,10 +106,23 @@ code {
 .header .apply-now:hover {
   background-color: #0766AD;
 }
+/* footer ccs */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.footer p {
+  margin: 0;
+}
 
 /* home page */
 .home-content {
   margin-top: 190px;
+  margin-bottom: 50px;
 }
 .home-content .slide-container {
   padding: 1px;
@@ -206,5 +219,28 @@ code {
 .number-measures .number-dialog  p {
   font-weight: 600;
   color: #333;
+}
+.courses-data{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.courses-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.course-card {
+  display: flex;
+  flex-direction: column;
+  background-color: lightcyan;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.course-image img {
+  height: 200px;
+  width: 230px;
 }
 
