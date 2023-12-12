@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap');
-
+:root {
+  ---blue: #1a9bf8;
+  ---lightBlue: #5FBDFF;
+  ---lightGrey: #d3d3d3;
+  ---linkBlack: #333:
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -53,7 +58,7 @@ code {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  box-shadow: 0px 2px 2px lightgray ;
+  box-shadow: 0px 2px 2px #d3d3d3 ;
   position: fixed;
   padding: 10px 0px;
 }
@@ -220,8 +225,16 @@ code {
   font-weight: 600;
   color: #333;
 }
-.courses-data{
+.courses-name{
   margin-top: 100px;
+  text-align: center;
+}
+.courses-name h2{
+  font-size: 35px;
+  font-weight: 700;
+}
+.courses-data{
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
@@ -234,13 +247,60 @@ code {
 .course-card {
   display: flex;
   flex-direction: column;
-  background-color: lightcyan;
+  background-color: lightgray;
   align-items: center;
   padding: 10px 10px;
+  border-radius: 5px;
+  width: 230px;
+  height: 300px;
 }
 
-.course-image img {
+
+.course-card:hover {
+  background-color: rgba(231, 229, 229, 0.897);
+}
+
+.course-card .course-image img {
   height: 200px;
   width: 230px;
+  border-radius: 5px;
+}
+.course-card .view-course {
+  margin-top: 10px;
+  display: flex;
+  align-self: flex-start;
+  margin-left: 10px;
+}
+.course-card .view-course button {
+  background-color: #1a9bf8;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 13px;
+  color: #ffffff;
+  font-weight: 600;
+}
+.course-card .view-course button:hover {
+  background-color: #5FBDFF;
+  color: #333;
+}
+.course-card .course-name p{
+  font-weight: 600;
+  text-align: center;
+  /* font-size: 18px; */
+}
+.more-courses {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 180px;
+}
+
+.more-courses p{
+  padding: 8px 15px;
+  background-color: #1a9bf8;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
 }
 

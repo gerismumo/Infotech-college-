@@ -135,12 +135,18 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div className="courses-name">
+                <h2>Courses</h2>
+            </div>
             <div className="courses-data">
                 <div className="courses-info">
                     {courses.map((course) => (
                         <div key={course.id}className="course-card">
                             <div className="course-image">
                                 <img src={course.image} alt="" />
+                            </div>
+                            <div className="view-course">
+                                <button>View</button>
                             </div>
                             <div className="course-name">
                                 <p>{course.name}</p>
@@ -149,7 +155,9 @@ const Home = () => {
                     ))}
                 </div>
             </div>
-            
+            <div className="more-courses">
+                    <p>More courses</p>
+            </div>
         </div>
     </div>
     <Footer />
