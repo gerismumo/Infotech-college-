@@ -113,13 +113,93 @@ code {
 }
 /* footer ccs */
 .footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+  background-color: #191919;
+  color: #ffffff;
+  padding: 20 0px;
+  /* text-align: center; */
   
 }
-
+.footer .footer-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  margin-right: 70px;
+  margin-left: 70px;
+  padding-bottom: 30px;
+}
+.footer .footer-details .address-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+.footer .footer-details .address-details .address {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.footer .footer-details .address-details .address h2 {
+  font-size: 22px;
+}
+.footer .footer-details .address-details .address p{
+  font-weight: 700;
+}
+.footer .footer-details .address-details .social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer .footer-details .address-details .social-icons .iconFooter {
+  color: var(---blue);
+  font-size: 25px;
+}
+.footer .footer-details .address-details .social-icons .iconFooter:hover {
+  color: var(---lightBlue);
+}
+.footer .footer-details .links-details {
+  display: flex;
+  flex-direction: column;
+}
+.footer .footer-details .links-details h2 {
+  color: var(---blue);
+  font-size: 24px;
+}
+.footer .footer-details .links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer .footer-details .links a{
+  text-decoration: none;
+  color:#ffffff;
+  font-weight: 500;
+}
+.footer .footer-details .links a:hover {
+  color: var(---lightBlue);
+}
+.footer .bottom-links {
+  background-color: whitesmoke;
+  padding: 20px;
+  color: var(---blue);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 30px;
+}
+.footer .bottom-links .copy-right {
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer .bottom-links .developer-details {
+  font-size: 16px;
+  font-weight: 500;
+}
+.footer .bottom-links .developer-details span {
+  color: #7B66FF;
+  font-weight: 600;
+}
 .footer p {
   margin: 0;
 }
@@ -328,6 +408,7 @@ code {
   display: flex;
   justify-content: flex-end;
   margin-right: 180px;
+  margin-bottom: 100px;
 }
 
 .more-courses p{
