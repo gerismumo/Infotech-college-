@@ -177,10 +177,32 @@ code {
 }
 
 .about {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  margin-top: 50px;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  display: flex;
+  justify-content: center;
+  gap: 60px;
   padding: 20px ;
+  margin-left: 40px;
+  margin-right: 40px;
+  align-items: center;
+}
+.about .about-content {
+  background-color: var(---lightBlue);
+  padding: 20px 20px;
+}
+.about .about-content:hover {
+  background-color: var(---blue);
+}
+.about .about-content .iconAbout {
+  color: #ffffff;
+  font-weight: 900;
+}
+.about .vision-mission {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
 }
 .about .about-content,
 .about .vision,
@@ -188,6 +210,10 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.iconAbout {
+  font-size: 35px;
+  color: var(---blue);
 }
 .about h2 {
   font-size: 25px;
@@ -197,10 +223,18 @@ code {
   line-height: 5vh;
   font-size: 18px;
 }
+.about .about-more {
+  border: 1px solid var(---lightBlue);
+  padding: 20px 10px;
+  width: 300px;
+  text-align: center;
+}
 .number-measures {
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
+  background-color: var(---lightGrey);
+  padding: 40px 0;
 }
 
 .number-measures .number-dialog {
@@ -227,7 +261,8 @@ code {
 }
 .courses-name{
   margin-top: 100px;
-  text-align: center;
+  text-align: left;
+  margin-left: 130px;
 }
 .courses-name h2{
   font-size: 35px;
@@ -251,8 +286,8 @@ code {
   align-items: center;
   padding: 10px 10px;
   border-radius: 5px;
-  width: 230px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 
 
@@ -261,8 +296,8 @@ code {
 }
 
 .course-card .course-image img {
-  height: 200px;
-  width: 230px;
+  height: 300px;
+  width: 380px;
   border-radius: 5px;
 }
 .course-card .view-course {

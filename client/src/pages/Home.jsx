@@ -1,6 +1,10 @@
+import { faBook, faBullseye, faGraduationCap, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import CountUp from 'react-countup';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
+import VisibilitySensor from 'react-visibility-sensor';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -69,18 +73,24 @@ const Home = () => {
         name: 'Certificate in Secretarial',
         image: '../../images/secretarial.jpg',
       },
-      {
-        id:4,
-        name: 'Diploma in Business Management',
-        image: '../../images/businessmanagemnet.jpg',
-      },
-      {
-        id: 5,
-        name: 'Certificate in Digital Marketing',
-        image: '../../images/Digitalmarket.jpg'
-      }
+    //   {
+    //     id:4,
+    //     name: 'Diploma in Business Management',
+    //     image: '../../images/businessmanagemnet.jpg',
+    //   },
+    //   {
+    //     id: 5,
+    //     name: 'Certificate in Digital Marketing',
+    //     image: '../../images/Digitalmarket.jpg'
+    //   }
     ]
-      
+    const [isVisible, setIsVisible] = useState(false);
+
+    const onVisibilityChange = (visible) => {
+      if (visible) {
+        setIsVisible(true);
+      }
+    };
   return (
     <>
     <Header />
@@ -105,34 +115,51 @@ const Home = () => {
             </div>
             <div className="about">
                 <div className="about-content">
+                <FontAwesomeIcon icon={faGraduationCap}  className='iconAbout'/>
                     <h2>What we Do</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam temporibus culpa ea minus quasi quia beatae! Saepe doloremque inventore sequi ad recusandae explicabo, quas consectetur eligendi molestias nulla ipsam.
                      nesciunt?
                    </p>
                 </div>
-                <div className="vision">
-                    <h2>Vision</h2>
-                    <p>To be the college of choice for developing professionals</p>
-                </div>
-                <div className="mission">
-                    <h2>Mission</h2>
-                    <p>To offer quality training and development for professionals</p>
+                <div className="vision-mission">
+                    <div className="vision about-more" >
+                    <FontAwesomeIcon icon={faBook} className='iconAbout' />
+                        <h2>Vision</h2>
+                        <p>To be the college of choice for developing professionals</p>
+                    </div>
+                    <div className="mission about-more">
+                    <FontAwesomeIcon icon={faBullseye} className='iconAbout' />
+                        <h2>Mission</h2>
+                        <p>To offer quality training and development for professionals</p>
+                    </div>
+                    <div className="goals about-more">
+                    <FontAwesomeIcon icon={faLightbulb} className='iconAbout' />
+                        <h2>Goals</h2>
+                        <p>To offer quality training and development for professionals</p>
+                    </div>
                 </div>
             </div>
             <div className="number-measures">
                 <div className="number-dialog">
-                    <div className="students">
-                        <h2>500</h2>
+                    <VisibilitySensor onChange={onVisibilityChange} partialVisibility offset={{ bottom: 200 }}>
+                        <div className="students">
+                        <h2>{isVisible ? <CountUp end={500} duration={2} separator="," /> : '0'}</h2>
                         <p>Students</p>
-                    </div>
-                    <div className="tutors">
-                        <h2>100</h2>
-                        <p>Tutors</p>
-                    </div>
-                    <div className="courses">
-                        <h2>18</h2>
-                        <p>Courses</p>
-                    </div>
+                        </div>
+                    </VisibilitySensor>
+                    <VisibilitySensor onChange={onVisibilityChange} partialVisibility offset={{ bottom: 200 }}>
+                        <div className="tutors">
+                            <h2>{isVisible ? <CountUp end={100} duration={2} separator="," /> : '0'}</h2>
+                            <p>Tutors</p>
+                        </div>
+                    </VisibilitySensor>
+                    <VisibilitySensor onChange={onVisibilityChange} partialVisibility offset={{ bottom: 200 }}>
+                        <div className="courses">
+                            <h2>{isVisible ? <CountUp end={18} duration={2} separator="," /> : '0' }</h2>
+                            <p>Courses</p>
+                        </div>
+                    </VisibilitySensor>
+                    
                 </div>
             </div>
             <div className="courses-name">
