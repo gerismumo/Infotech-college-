@@ -88,6 +88,9 @@ const Enroll = () => {
                         </form>
                     </div>
                 </div>
+                <div className="inst-quote">
+                    <p>College of choice for developing professionals</p>
+                </div>
             </div>
         </div>
         <Footer />

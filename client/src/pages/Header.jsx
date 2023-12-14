@@ -25,7 +25,17 @@ const Header = () => {
                     {/* <Link to="/">About</Link> */}
                     <Link to="/courses">Courses</Link>
                     <Link to="/contact">Contact</Link>
-                    <Link  className='portal' to="">Portal Login</Link>
+                    <div className="portal-login">
+                        <div className="portal-main-link">
+                            <Link  className='portal' to="">Portal Login</Link>
+                        </div>
+                        <div className="portal-dropdown">
+                            <Link to='/studentPortal'>Student Portal</Link>
+                            <span></span>
+                            <Link to='/staffPortal'>Staff Portal</Link>
+                        </div>
+                    </div>
+                    
                     </div>
                     <div className="apply-link">
                         <Link  className ='apply-now' to="/enroll">Apply Now</Link>

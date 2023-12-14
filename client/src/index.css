@@ -114,9 +114,38 @@ code {
   padding: 8px 20px;
   border-radius: 20px;
   font-weight: 500;
+  position: relative;
 }
 .header .apply-now:hover {
   background-color: var(---lightBlue);
+  
+}
+.header .portal-main-link{
+  align-items: center;
+  display: flex;
+}
+.header .portal-dropdown {
+  /* display: none; */
+  position: absolute;
+  z-index: 1;
+  display: flex ;
+  flex-direction: column;
+  background-color: var(---white);
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 4px;
+  /* margin-right: 20px; */
+  border: 1px solid var(---lightGrey);
+  gap: 10px;
+}
+.header .portal-dropdown  a {
+  width: 100%;
+  margin: 0;
+}
+.header .portal-dropdown span {
+  width: 80%;
+  border-bottom: 3px solid var(---lightGrey);
+  margin: 0 auto;
 }
 /* footer ccs */
 .footer {
@@ -874,4 +903,37 @@ code {
 }
 .enroll-form  .button button:hover{
   background-color: var(---lightBlue);
+}
+.enroll-page .inst-quote {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.enroll-page .inst-quote p{
+  text-align: center;
+  color: var(---grey);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* student portal */
+.student-portal {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-portal .student-portal-content {
+  margin-top: 190px;
+}
+
+/* staff-portal */
+.staff-portal {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-portal .staff-portal-content {
+  margin-top: 190px;
 }
