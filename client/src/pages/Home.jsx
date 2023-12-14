@@ -2,6 +2,7 @@ import { faArrowRight, faBook, faBullseye, faGraduationCap, faLightbulb } from '
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
+import { useNavigate } from 'react-router-dom';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -9,8 +10,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 const Home = () => {
-
-      
+  const navigate = useNavigate();
       const fadeImages = [
         {
           url: 'https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
@@ -91,6 +91,10 @@ const Home = () => {
         setIsVisible(true);
       }
     };
+
+    const MoveToCourses = () => {
+      navigate('/courses');
+    }
   return (
     <>
     <Header />
@@ -163,7 +167,8 @@ const Home = () => {
                 </div>
             </div>
             <div className="courses-name">
-                <h2>Courses</h2>
+                <span></span>
+                <p>Popular Courses</p>
             </div>
             <div className="courses-data">
                 <div className="courses-info">
@@ -183,7 +188,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="more-courses">
-                    <p>More courses <FontAwesomeIcon icon={faArrowRight} className='moreIcon'/></p>
+                    <p onClick={MoveToCourses}>More courses <FontAwesomeIcon icon={faArrowRight} className='moreIcon'/></p>
             </div>
         </div>
     </div>

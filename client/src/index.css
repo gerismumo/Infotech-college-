@@ -346,14 +346,23 @@ code {
   font-weight: 600;
   color: var(---lightBlack);
 }
+
 .courses-name{
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  align-items: center;
+  gap: 5px;
   margin-top: 100px;
-  text-align: left;
-  margin-left: 130px;
 }
-.courses-name h2{
-  font-size: 35px;
-  font-weight: 700;
+.courses-name span{
+ width: 130px;
+  border-bottom: 2px solid var(---grey);
+}
+.courses-name p{
+  color: var(---blue);
+  font-size: 25px;
+  font-weight: 800;
 }
 .courses-data{
   margin-top: 50px;
@@ -451,13 +460,119 @@ code {
 }
 .courses-page-content {
   margin-top: 190px;
-  margin-bottom: 50px;
+  margin-bottom: 120px;
 }
-
-.courses-page .courses-data{
-  margin-top: 50px;
+.courses-page .courses-title {
   display: flex;
   justify-content: center;
+  background-color: var(---lightBlue);
+  color: var(---white);
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.courses-table {
+  margin-top: 70px ;
+  display: flex;
+ justify-content: center;
+}
+.courses-table-details {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.courses-table-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.courses-table-details table thead {
+  border-top-left-radius: 8px;
+}
+
+.courses-table-details table th, .courses-table-details td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(---lightGrey);
+  
+}
+
+.courses-table-details table th {
+  background-color: var(---blue);
+  color: var(--white);
+ 
+}
+.courses-table-details tbody tr {
+  font-weight: 500;
+}
+.courses-table-details tbody tr:nth-child(even) {
+  background-color: var(---whiteSmoke);
+}
+
+.courses-table-details tbody tr:hover {
+  background-color: var(---hoverGrey);
+}
+
+.courses-table-details button {
+  background-color: var(---blue);
+  color: var(---white);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.courses-table-details button:hover {
+  background-color: var(---lightBlue);
+  color: var(---darkBlack);
+}
+
+/* Add animations for a more user-friendly experience */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.courses-table-details tbody tr {
+  animation: fadeIn 0.5s ease-out;
+}
+.courses-page .other-title {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  align-items: center;
+  gap: 5px;
+  margin-top: 70px;
+}
+.courses-page .other-title span{
+ width: 130px;
+  border-bottom: 2px solid var(---grey);
+}
+.courses-page .other-title p{
+  color: var(---blue);
+  font-size: 20px;
+  font-weight: 800;
+}
+.courses-page .other-courses {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.courses-page .courses-data{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 0 90px;
 }
 .courses-page .courses-info {
   display: flex;
@@ -509,4 +624,254 @@ code {
   font-weight: 600;
   text-align: center;
   /* font-size: 18px; */
+}
+
+.courses-page .inst-quote {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.courses-page .inst-quote p{
+  text-align: center;
+  color: var(---grey);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* contact page css */
+
+.contact-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page .contact-page-details {
+  margin-top: 190px;
+  margin-bottom: 70px;
+}
+.contact-page .contact-title {
+  display: flex;
+  justify-content: center;
+  background-color: var(---lightBlue);
+  font-size: 25px;
+  font-weight: 900;
+  color: var(---white);
+}
+
+.contact-page .contact-form-title {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  align-items: center;
+  gap: 5px;
+  margin-top: 40px;
+}
+.contact-page .contact-form-title span{
+ width: 130px;
+  border-bottom: 2px solid var(---grey);
+}
+.contact-page .contact-form-title p{
+  color: var(---blue);
+  font-size: 20px;
+  font-weight: 800;
+}
+.contact-page .contact-detail {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+.contact-page .contact-image img {
+  width: 700px;
+  height: 500px;
+}
+.contact-page form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-page form .name-email {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.contact-page form .name, .email {
+  display: flex;
+  flex-direction: column;
+}
+.contact-page form label {
+  font-weight: 600;
+  margin-bottom:5px;
+  margin-top: 10px;
+}
+.contact-page form input {
+  border: 1px solid var(---blue);
+  height: 5vh;
+  border-radius: 4px;
+  outline: none;
+  width: 230px;
+  font-size: 16px;
+  padding: 0 6px;
+}
+.contact-page form textarea {
+  border: 1px solid var(---blue);
+  height: 25vh;
+  border-radius: 4px;
+  resize: vertical;
+  outline: none;
+  font-size: 18px;
+  padding: 15px 10px;
+}
+.contact-page form .button {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.contact-page form .button button {
+  background-color: var(---blue);
+  border: none;
+  padding: 8px 20px;
+  color: var(---white);
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.contact-page form .button button:hover {
+  background-color: var(---lightBlue);
+}
+
+.contact-page .inst-quote {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-page .inst-quote p{
+  text-align: center;
+  color: var(---grey);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* enroll page css */
+
+.enroll-page{
+  display: flex;
+  flex-direction: column;
+}
+.enroll-page .enroll-content {
+  margin-top: 190px;
+}
+
+.enroll-page .enroll-title {
+  display: flex;
+  justify-content: center;
+  background-color: var(---lightBlue);
+  font-size: 25px;
+  font-weight: 900;
+  color: var(---white);
+}
+.enroll-page .enroll-details {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.enroll-page .enroll-form-text{
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  align-items: center;
+  gap: 5px;
+  margin-top: 40px;
+}
+.enroll-page .enroll-form-text span{
+ width: 130px;
+  border-bottom: 2px solid var(---grey);
+}
+.enroll-page .enroll-form-text p{
+  color: var(---blue);
+  font-size: 20px;
+  font-weight: 800;
+}
+.enroll-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enroll-form form .form-parts {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  /* align-items: center; */
+}
+.enroll-form form .form-parts  .form-part1{
+  display: flex;
+  flex-direction: column;
+}
+.enroll-form form .form-parts  .form-part2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.enroll-form form input , select {
+  border: 1px solid var(---blue);
+  height: 6vh;
+  width: 350px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0 6px;
+}
+.enroll-form form  .gender {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+.enroll-form form  .gender input {
+  height: 18px;
+  width: 18px;
+  margin: 0;
+  padding: 0;
+}
+.enroll-form form  .gender .male, .female {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.enroll-form form  .gender label {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+}
+.enroll-form form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 18px;
+}
+.enroll-form  .button {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.enroll-form  .button button {
+  background-color: var(---blue);
+  border:none ;
+  padding: 8px 80px;
+  font-size: 22px;
+  color: var(---white);
+  font-weight: 600;
+  border-radius: 6px;
+  letter-spacing: 5px;
+  font-size: 30px;
+}
+.enroll-form  .button button:hover{
+  background-color: var(---lightBlue);
 }

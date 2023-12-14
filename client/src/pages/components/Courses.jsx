@@ -1,113 +1,8 @@
-import React from 'react'
-import Footer from '../Footer'
-import Header from '../Header'
+import React from 'react';
+import Footer from '../Footer';
+import Header from '../Header';
 
-const Courses = () => {
-
-    const courses = [
-      {
-      id: 1,
-      name: 'Certificate in Computer Studies',
-      image: '../../images/computerStudis.jpg'
-    },
-    {
-      id: 2,
-      name: 'Diploma in Human Resources',
-      image: '../../images/human.jpg',
-    },
-    {
-      id: 3,
-      name: 'Certificate in Secretarial',
-      image: '../../images/secretarial.jpg',
-    },
-    {
-      id:4,
-      name: 'Diploma in Business Management',
-      image: '../../images/businessmanagemnet.jpg',
-    },
-    {
-      id: 5,
-      name: 'Certificate in Digital Marketing',
-      image: '../../images/Digitalmarket.jpg'
-    },
-    {
-      id: 6,
-      name: 'Certificate in Computer Studies',
-      image: '../../images/computerStudis.jpg'
-    },
-    {
-      id: 7,
-      name: 'Diploma in Human Resources',
-      image: '../../images/human.jpg',
-    },
-    {
-      id: 8,
-      name: 'Certificate in Secretarial',
-      image: '../../images/secretarial.jpg',
-    },
-    {
-      id:9,
-      name: 'Diploma in Business Management',
-      image: '../../images/businessmanagemnet.jpg',
-    },
-    {
-      id: 10,
-      name: 'Certificate in Digital Marketing',
-      image: '../../images/Digitalmarket.jpg'
-    },
-    {
-      id: 11,
-      name: 'Certificate in Computer Studies',
-      image: '../../images/computerStudis.jpg'
-    },
-    {
-      id: 12,
-      name: 'Diploma in Human Resources',
-      image: '../../images/human.jpg',
-    },
-    {
-      id: 13,
-      name: 'Certificate in Secretarial',
-      image: '../../images/secretarial.jpg',
-    },
-    {
-      id:14,
-      name: 'Diploma in Business Management',
-      image: '../../images/businessmanagemnet.jpg',
-    },
-    {
-      id: 15,
-      name: 'Certificate in Digital Marketing',
-      image: '../../images/Digitalmarket.jpg'
-    },
-    {
-      id: 16,
-      name: 'Certificate in Computer Studies',
-      image: '../../images/computerStudis.jpg'
-    },
-    {
-      id: 17,
-      name: 'Diploma in Human Resources',
-      image: '../../images/human.jpg',
-    },
-    {
-      id: 18,
-      name: 'Certificate in Secretarial',
-      image: '../../images/secretarial.jpg',
-    },
-    {
-      id: 19,
-      name: 'Diploma in Business Management',
-      image: '../../images/businessmanagemnet.jpg',
-    },
-    {
-      id: 20,
-      name: 'Certificate in Digital Marketing',
-      image: '../../images/Digitalmarket.jpg'
-    }
-  ]
-
-  const coursesDetails = [
+  export const  coursesDetails = [
     {
       id: 1,
       name: 'Accounts CPA SEC 1-6',
@@ -254,10 +149,10 @@ const Courses = () => {
     }
   ]
 
-  const otherCourses = [
+  export const otherCourses = [
     {
       id: 1,
-      name: 'Emglish, Kiswahili, French, German, Spanish',
+      name: 'English, Kiswahili, French, German, Spanish',
       fees: '2,000',
       image: '../../images/german.jpg',
     },
@@ -286,35 +181,147 @@ const Courses = () => {
       image: '../../images/tution.jpg',
     }
   ]
+const Courses = () => {
+
+    const courses = [
+      {
+      id: 1,
+      name: 'Certificate in Computer Studies',
+      image: '../../images/computerStudis.jpg'
+    },
+    {
+      id: 2,
+      name: 'Diploma in Human Resources',
+      image: '../../images/human.jpg',
+    },
+    {
+      id: 3,
+      name: 'Certificate in Secretarial',
+      image: '../../images/secretarial.jpg',
+    },
+    {
+      id:4,
+      name: 'Diploma in Business Management',
+      image: '../../images/businessmanagemnet.jpg',
+    },
+    {
+      id: 5,
+      name: 'Certificate in Digital Marketing',
+      image: '../../images/Digitalmarket.jpg'
+    },
+    {
+      id: 6,
+      name: 'Certificate in Computer Studies',
+      image: '../../images/computerStudis.jpg'
+    },
+    {
+      id: 7,
+      name: 'Diploma in Human Resources',
+      image: '../../images/human.jpg',
+    },
+    {
+      id: 8,
+      name: 'Certificate in Secretarial',
+      image: '../../images/secretarial.jpg',
+    },
+    {
+      id:9,
+      name: 'Diploma in Business Management',
+      image: '../../images/businessmanagemnet.jpg',
+    },
+    {
+      id: 10,
+      name: 'Certificate in Digital Marketing',
+      image: '../../images/Digitalmarket.jpg'
+    },
+    {
+      id: 11,
+      name: 'Certificate in Computer Studies',
+      image: '../../images/computerStudis.jpg'
+    },
+    {
+      id: 12,
+      name: 'Diploma in Human Resources',
+      image: '../../images/human.jpg',
+    },
+    {
+      id: 13,
+      name: 'Certificate in Secretarial',
+      image: '../../images/secretarial.jpg',
+    },
+    {
+      id:14,
+      name: 'Diploma in Business Management',
+      image: '../../images/businessmanagemnet.jpg',
+    },
+    {
+      id: 15,
+      name: 'Certificate in Digital Marketing',
+      image: '../../images/Digitalmarket.jpg'
+    },
+    {
+      id: 16,
+      name: 'Certificate in Computer Studies',
+      image: '../../images/computerStudis.jpg'
+    },
+    {
+      id: 17,
+      name: 'Diploma in Human Resources',
+      image: '../../images/human.jpg',
+    },
+    {
+      id: 18,
+      name: 'Certificate in Secretarial',
+      image: '../../images/secretarial.jpg',
+    },
+    {
+      id: 19,
+      name: 'Diploma in Business Management',
+      image: '../../images/businessmanagemnet.jpg',
+    },
+    {
+      id: 20,
+      name: 'Certificate in Digital Marketing',
+      image: '../../images/Digitalmarket.jpg'
+    }
+  ]
+
   return (
     <>
     <Header />
       <div className='courses-page'>
         <div className="courses-page-content">
-          <h1>Courses</h1>
-
+          <div className="courses-title">
+            <h1>Courses</h1>
+          </div>
           <div className="courses-table">
-            <table>
-              <thead>
-                <th>COURSE</th>
-                <th>EXAMINER</th>
-                <th>DURATION</th>
-                <th>MIN ENTRY</th>
-                <th>FEES</th>
-              </thead>
-              <tbody>
-                {coursesDetails.map((course) => (
-                  <tr key={course.id}>
-                    <td>{course.name}</td>
-                    <td>{course.examiner}</td>
-                    <td>{course.duration}</td>
-                    <td>{course.entry}</td>
-                    <td>{course.fees}</td>
-                    <td><button>Enroll</button></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="courses-table-details">
+              <table>
+                <thead>
+                  <th>COURSE</th>
+                  <th>EXAMINER</th>
+                  <th>DURATION</th>
+                  <th>MIN ENTRY</th>
+                  <th>FEES</th>
+                </thead>
+                <tbody>
+                  {coursesDetails.map((course) => (
+                    <tr key={course.id}>
+                      <td>{course.name}</td>
+                      <td>{course.examiner}</td>
+                      <td>{course.duration}</td>
+                      <td>{course.entry}</td>
+                      <td>{course.fees}</td>
+                      <td><button>Enroll</button></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div> 
+          </div>
+          <div className="other-title">
+            <span></span>
+            <p>Other Courses</p>
           </div>
           <div className="other-courses">
               <div className="courses-data">
@@ -341,6 +348,9 @@ const Courses = () => {
                         ))}
                     </div>
                 </div>
+          </div>
+          <div className="inst-quote">
+            <p>College of choice for developing professionals</p>
           </div>
         </div>
       </div>
