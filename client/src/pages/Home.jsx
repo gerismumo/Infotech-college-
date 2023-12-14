@@ -41,14 +41,14 @@ const Home = () => {
     
           await new Promise(resolve => setTimeout(resolve, 2000)); 
     
-          for (let i = initialText.length; i >= 0; i--) {
-            if (!isMounted) break;
-            setDisplayText(initialText.substring(0, i));
-            await new Promise(resolve => setTimeout(resolve, 100));
-          }
-          if (isMounted) {
-            animateText();
-          }
+        //   for (let i = initialText.length; i >= 0; i--) {
+        //     if (!isMounted) break;
+        //     setDisplayText(initialText.substring(0, i));
+        //     await new Promise(resolve => setTimeout(resolve, 100));
+        //   }
+        //   if (isMounted) {
+        //     animateText();
+        //   }
         };
     
         animateText();

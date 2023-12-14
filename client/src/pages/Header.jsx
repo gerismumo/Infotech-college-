@@ -21,10 +21,10 @@ const Header = () => {
                 </div>
                 <div className="links">
                     <div className="other-link">
-                    <Link to="">Home</Link>
-                    <Link to="">About</Link>
-                    <Link to="">Courses</Link>
-                    <Link to="">Contact</Link>
+                    <Link to="/">Home</Link>
+                    <Link to="/">About</Link>
+                    <Link to="/courses">Courses</Link>
+                    <Link to="/contact">Contact</Link>
                     <Link  className='portal' to="">Portal Login</Link>
                     </div>
                     <div className="apply-link">
