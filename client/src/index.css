@@ -951,3 +951,12 @@ code {
 .staff-portal .staff-portal-content {
   margin-top: 190px;
 }
+
+/* login page css */
+.login-page {
+  display: flex;
+  flex-direction: column;
+}
+.login-page .login-content {
+  margin-top: 190px;
+}
