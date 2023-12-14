@@ -1,4 +1,4 @@
-import { faBook, faBullseye, faGraduationCap, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faBook, faBullseye, faGraduationCap, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
@@ -183,7 +183,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="more-courses">
-                    <p>More courses</p>
+                    <p>More courses <FontAwesomeIcon icon={faArrowRight} className='moreIcon'/></p>
             </div>
         </div>
     </div>
