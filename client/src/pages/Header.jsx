@@ -30,12 +30,14 @@ const Header = () => {
                 </div>
                 <div className="links" >
                     <div className="other-link">
-                    <Link to="/">Home</Link>
-                    {/* <Link to="/">About</Link> */}
-                    <Link to="/courses">Courses</Link>
-                    <Link to="/contact">Contact</Link>
-                    <div className="portal-login">
-                        <div className="portal-main-link">
+                        <div className="other-part1">
+                            <Link to="/">Home</Link>
+                            {/* <Link to="/">About</Link> */}
+                            <Link to="/courses">Courses</Link>
+                            <Link to="/contact">Contact</Link>
+                        </div>
+                    <div className="portal-login" onMouseLeave={handleDropDownClose}>
+                        <div className="portal-main-link" >
                             <Link  className='portal' to="" onMouseEnter={handleDropDown} >Portal Login</Link>
                         </div>
                         {openPortal && (

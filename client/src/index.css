@@ -89,14 +89,25 @@ code {
 .header .other-link {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 15px;
   font-size: 18px;
+  align-items: center;
 }
 .header .other-link a {
   text-decoration: none;
   color: var(---lightBlack);
   font-weight: 500;
+ 
+}
+.header .other-link .other-part1  {
   padding: 5px 10px;
+  gap: 50px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.header .other-link .other-part1 a {
+  padding: 10px 10px;
 }
 .header .other-link a:hover {
   color: var(---lightBlue) ;
@@ -120,6 +131,9 @@ code {
   background-color: var(---lightBlue);
   
 }
+.header .portal-login{
+  padding: 10px 10px;
+}
 .header .portal-main-link{
   align-items: center;
   display: flex;
@@ -132,7 +146,7 @@ code {
   flex-direction: column;
   background-color: var(---white);
   margin-top: 3px;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 4px;
   /* margin-right: 20px; */
   border: 1px solid var(---lightGrey);
