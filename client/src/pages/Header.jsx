@@ -1,11 +1,20 @@
 import { faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+    const [openPortal, setOpenPortal] = useState(false);
+
+    const handleDropDown = () => {
+        setOpenPortal(true);
+    }
+    
+    const handleDropDownClose = () => {
+        setOpenPortal(false);
+    }
   return (
-    <div className="header">
+    <div className="header" onMouseLeave={handleDropDownClose}>
         <div className="social-links">
             <div className="social">
                 <div className="links">
@@ -15,11 +24,11 @@ const Header = () => {
                 </div> 
             </div>
         </div>
-            <nav>
+            <nav >
                 <div className="logo">
                     <img src='../../images/infotectlogo.jpg' alt='logo' />
                 </div>
-                <div className="links">
+                <div className="links" >
                     <div className="other-link">
                     <Link to="/">Home</Link>
                     {/* <Link to="/">About</Link> */}
@@ -27,13 +36,16 @@ const Header = () => {
                     <Link to="/contact">Contact</Link>
                     <div className="portal-login">
                         <div className="portal-main-link">
-                            <Link  className='portal' to="">Portal Login</Link>
+                            <Link  className='portal' to="" onMouseEnter={handleDropDown} >Portal Login</Link>
                         </div>
-                        <div className="portal-dropdown">
-                            <Link to='/studentPortal'>Student Portal</Link>
-                            <span></span>
-                            <Link to='/staffPortal'>Staff Portal</Link>
-                        </div>
+                        {openPortal && (
+                            <div className="portal-dropdown" onMouseLeave={handleDropDownClose}>
+                                <Link to='/studentPortal'>Student Portal</Link>
+                                <span></span>
+                                <Link to='/staffPortal'>Staff Portal</Link>
+                            </div>
+                        )}
+                        
                     </div>
                     
                     </div>
