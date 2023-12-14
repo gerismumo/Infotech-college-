@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import Header from '../Header'
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Footer from '../Footer';
+import Header from '../Header';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -21,10 +22,17 @@ const Login = () => {
     <Header />
     <div className="login-page">
         <div className="login-content">
-            <div className="login-titl">
+            <div className="login-title">
                 <h1>Login</h1>
             </div>
+            <div className="login-span">
+                <span></span>
+                <p>Login Form</p>
+            </div>
             <div className="login-form">
+                <div className="login-image">
+                    <img src="../../images/businessmanagemnet.jpg" alt="" />
+                </div>
                 <div className="form">
                     <form onSubmit={(e) => handleSubmit(e)}>
                         <label htmlFor="email">Email:</label>
@@ -48,8 +56,12 @@ const Login = () => {
                     </form>
                 </div>
             </div>
+            <div className="inst-quote">
+                 <p>College of choice for developing professionals</p>
+             </div>
         </div>
     </div>
+    <Footer />
     </>
     
   )

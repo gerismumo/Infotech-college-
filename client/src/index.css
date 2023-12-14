@@ -960,3 +960,104 @@ code {
 .login-page .login-content {
   margin-top: 190px;
 }
+.login-page .login-title {
+  display: flex;
+  justify-content: center;
+  background-color: var(---lightBlue);
+  font-size: 25px;
+  font-weight: 900;
+  color: var(---white);
+}
+
+.login-page .login-span{
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  align-items: center;
+  gap: 5px;
+  margin-top: 40px;
+}
+.login-page .login-span span{
+ width: 130px;
+  border-bottom: 2px solid var(---grey);
+}
+.login-page .login-span p{
+  color: var(---blue);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.login-page .login-form {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+}
+.login-page .login-form .login-image img {
+  height: 500px;
+  width: 600px;
+}
+.login-page .form form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+.login-page .form form input{
+  width: 350px;
+  height: 6vh;
+  border: 1px solid var(---blue);
+  border-radius: 5px;
+  padding: 0 10px;
+  outline: none;
+  font-size: 18px;
+}
+.login-page .form form label {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.login-page .form form  .button {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.login-page .form form  .button button {
+  padding: 9px 25px;
+  background-color: var(---blue);
+  color: var(---white);
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  letter-spacing: 4px;
+}
+.login-page .form form  .button button:hover {
+  background-color: var(---lightBlue);
+}
+.login-page .form form .login-text {
+  margin-top: 40px;
+}
+.login-page .form form .login-text p{
+  color: var(---blue);
+  font-weight: 500;
+}
+.login-page .form form .login-text p span {
+  color: var(---darkBlack);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.login-page .inst-quote {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.login-page .inst-quote p{
+  text-align: center;
+  color: var(---grey);
+  font-size: 25px;
+  font-weight: 800;
+}
