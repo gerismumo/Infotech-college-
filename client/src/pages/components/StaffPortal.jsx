@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Header from '../Header';
 
 const StaffPortal = () => {
@@ -18,7 +18,8 @@ const StaffPortal = () => {
                     <Link to=''>Students List</Link>
                     <Link to='enrollmentList'>Enrollment List</Link>
                     <Link to='coursesList'>Courses List</Link>
-                    <Link to='lectures'>Lectures List</Link>
+                    <Link to='lecturer'>Lecturer List</Link>
+                    <button>Log out</button>
                   </div>
                 </div>
                 <div className="staff-content">

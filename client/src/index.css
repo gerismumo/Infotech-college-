@@ -1111,8 +1111,20 @@ code {
   color: var(---white);
   font-weight: 700;
 }
-.staff-portal .staff-page-layout .side-bar .side-links a:hover {
+.staff-portal .staff-page-layout .side-bar .side-links button {
+  padding: 10px 15px;
+  width: 100px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
 
+}
+.staff-portal .staff-page-layout .side-bar .side-links button:hover {
+  background-color: var(---grey);
+}
+.staff-portal .staff-page-layout .side-bar .side-links a:hover {
+  color: var(---darkBlack);
 }
 /* student portal */
 .student-portal {
