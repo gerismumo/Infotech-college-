@@ -31,6 +31,16 @@ const Login = () => {
             const success = response.data.success;
             if(success) {
                 toast.success(response.data.message);
+                // console.log('response.data.data',response.data.data);
+                const loginUser= response.data.data;
+                const role =loginUser[0].role;
+                if(role === 'student') {
+                    navigate('/studentPortal')
+                }else if(role === 'staff') {
+                    navigate('/staffPortal')
+                } else (
+                    navigate('/')
+                )
             }else {
                 toast.error(response.data.message);
             }

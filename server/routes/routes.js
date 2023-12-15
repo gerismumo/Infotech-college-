@@ -49,7 +49,7 @@ routes.post('/login', async(req, res) => {
             const password = findStudentByEmail[0].first_name;
             if(userPassword === password) {
                 console.log('Student Login successiful');
-                res.json({success: true, message: 'Login Successiful'});
+                res.json({success: true, message: 'Login Successiful', data: findStudentByEmail});
             } else  {
                 console.log(' Student Please Check the password and the email')
                 res.json({success:false, message: 'Please Check the password and the email'});
@@ -59,7 +59,7 @@ routes.post('/login', async(req, res) => {
             const password = findStaffByEmail[0].password;
             if(userPassword === password) {
                 console.log('Staff Login successiful');
-                res.json({success: true, message: 'Login Successful'})
+                res.json({success: true, message: 'Login Successful', data: findStaffByEmail})
             } else  {
                 console.log(' Staff Please Check the password and the email')
                 res.json({success: false, message: 'Please check the password and the email'});
