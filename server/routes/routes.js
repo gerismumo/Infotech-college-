@@ -91,4 +91,14 @@ routes.get('/enrolledStudents', async(req, res) => {
     }
 });
 
+routes.put('/updateApprove/:id', async(req, res) => {
+    try {
+        const {id} =  req.params;
+        await controller.ApproveStudents(id);
+        res.json({success: true, message: 'Successful approval' });
+    } catch (error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
 module.exports = routes;

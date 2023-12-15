@@ -22,8 +22,16 @@ const EnrollmentList = () => {
         enrollStudents();
     }, [enroll_student_api]);
 
-    const handleApprove = (id) => {
+    const handleApprove = async (id) => {
         console.log(`Approve ${id}`);
+        const approve_api = `${process.env.REACT_APP_API_URL}/api/updateApprove/${id}`;
+
+        try {
+            const response = await axios.put(approve_api);
+            console.log(response);
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
   return (

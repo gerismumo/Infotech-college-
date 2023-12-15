@@ -1,13 +1,20 @@
-import React, { useEffect } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const Student = () => {
+    const[studentList, setStudentList] = useState([]);
+
     const approved_student_api = `${process.env.REACT_APP_API_URL}/api/approvedStudents`;
 
      useEffect(() => {
         const approvedStudents = async() => {
             try{
                 const response = await axios.get(approved_student_api);
+                const success = response.data.success;
+                if(success) {
+                    const data = response.data.data;
+                    setStudentList(data);
+                }
                 console.log(response);
             }catch (error) {
                 console.log(error.message);
@@ -17,9 +24,46 @@ const Student = () => {
      }, [approved_student_api]);
 
   return (
-    <div className="student-page">
-        <div className="student-content">
-
+    <div className="enrollment-page">
+        <div className="enroll-content">
+            <div className="enroll-table">
+                <table>
+                    <thead>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone No.</th>
+                        <th>Gender</th>
+                        <th>County</th>
+                        <th>Birth Date</th>
+                        <th>Grade</th>
+                        <th>Course</th>
+                        <th>Additional Course</th>
+                        <th>Approved</th>
+                    </thead>
+                    <tbody>
+                        {studentList.map((student) => (
+                            <tr key={student.id}>
+                                <td>{student.first_name}</td>
+                                <td>{student.middle_name}</td>
+                                <td>{student.last_name}</td>
+                                <td>{student.student_email}</td>
+                                <td>{student.phone_number}</td>
+                                <td>{student.gender}</td>
+                                <td>{student.county}</td>
+                                <td>{student.birth_date}</td>
+                                <td>{student.grade}</td>
+                                <td>{student.course}</td>
+                                <td>{student.additional_course}</td>
+                                <td>{student.approved === 0 ? 'No' : 'Yes'}</td>
+                                <td><button>Edit</button></td>
+                                <td><button>Delete</button></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
   )

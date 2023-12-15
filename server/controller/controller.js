@@ -30,6 +30,7 @@ const controller = {
                         }
                     });
             });
+            connection.end();
             return enroll;
         } catch(error) {
             console.error(error.message);
@@ -50,6 +51,7 @@ const controller = {
                         resolve(result);
                     }
                 });
+                connection.end();
             });
 
         }catch (error)  {
@@ -69,6 +71,7 @@ const controller = {
                         resolve(result);
                     }
                 });
+                connection.end();
             });
         } catch (error) {
             console.log(error.message);
@@ -87,6 +90,7 @@ const controller = {
                         resolve(result);
                     }
                 });
+                connection.end();
             });
         } catch (error) {
             console.log(error.message);
@@ -126,6 +130,25 @@ const controller = {
                 });
                 connection.end();
             });
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    ApproveStudents: async (id) => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.updateApproveStudent;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql, [id], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            })
         } catch (error) {
             console.log(error.message);
         }
