@@ -73,4 +73,22 @@ routes.post('/login', async(req, res) => {
     }
 });
 
+routes.get('/approvedStudents', async(req, res) => {
+    try {
+        const data = await controller.selectApprovedStudent();
+        res.json({success: true, data: data});
+    }catch (error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
+routes.get('/enrolledStudents', async(req, res) => {
+    try {
+        const data = await controller.selectUnApprovedStudent();
+        res.json({success: true, data: data});
+    }catch (error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
 module.exports = routes;

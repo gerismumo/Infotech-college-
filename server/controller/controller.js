@@ -92,6 +92,44 @@ const controller = {
             console.log(error.message);
         }
     },
+    selectApprovedStudent: async () => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.selectApprovedStudents;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql, (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    selectUnApprovedStudent: async () => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.selectUnApprovedStudents;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql, (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 }
 
 module.exports = controller;

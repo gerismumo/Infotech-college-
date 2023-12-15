@@ -8,6 +8,8 @@ const queries = {
     selectStudentEmail: 'SELECT * FROM students_table WHERE student_email = ?',
     selectStaff: 'SELECT * FROM staff_table',
     selectStaffByEmail:'SELECT * FROM staff_table WHERE email = ?',
+    selectApprovedStudents: 'SELECT * FROM students_table WHERE approved = 1',
+    selectUnApprovedStudents: 'SELECT * FROM students_table WHERE approved = 0',
 }
 
 module.exports = queries;
