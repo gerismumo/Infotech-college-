@@ -44,7 +44,7 @@ const Header = () => {
                             <div className="portal-dropdown" onMouseLeave={handleDropDownClose}>
                                 <Link to='/login'>Student Portal</Link>
                                 <span></span>
-                                <Link to='/staffPortal'>Staff Portal</Link>
+                                <Link to='/login'>Staff Portal</Link>
                             </div>
                         )}
                         
