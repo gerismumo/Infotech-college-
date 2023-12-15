@@ -35,6 +35,14 @@ code {
  width: 100%;
  position: fixed;
  z-index: 999;
+ transition: transform 0.3s ease-in-out;
+}
+.header--visible {
+  transform: translateY(0); 
+}
+
+.header--hidden {
+  transform: translateY(-200px); 
 }
 .header .social-links {
   padding: 10px 0;

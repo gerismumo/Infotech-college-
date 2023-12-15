@@ -1,6 +1,6 @@
 import { faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -13,8 +13,19 @@ const Header = () => {
     const handleDropDownClose = () => {
         setOpenPortal(false);
     }
+
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          setIsHeaderVisible(window.scrollY < 50); 
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+      
   return (
-    <div className="header" onMouseLeave={handleDropDownClose}>
+    <div className='header' onMouseLeave={handleDropDownClose}>
         <div className="social-links">
             <div className="social">
                 <div className="links">
@@ -24,7 +35,7 @@ const Header = () => {
                 </div> 
             </div>
         </div>
-            <nav >
+            <nav className={`${isHeaderVisible ? 'header--visible': 'header--hidden'}`}>
                 <div className="logo">
                     <img src='../../images/infotectlogo.jpg' alt='logo' />
                 </div>
