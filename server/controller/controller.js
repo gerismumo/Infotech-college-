@@ -73,7 +73,25 @@ const controller = {
         } catch (error) {
             console.log(error.message);
         }
-    }
+    },
+    selectStaffByEmail: async (email) => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.selectStaffByEmail;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql,[email], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+            });
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
 }
 
 module.exports = controller;

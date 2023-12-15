@@ -16,15 +16,21 @@ routes.post('/enroll', async(req, res) => {
         const formData = req.body;
         const email = formData.email;
         console.log(email);
+
         const findStudentByEmail = await controller.selectStudentByEmail(email);
+        const findStaffByEmail = await controller.selectStaffByEmail(email);
+
         if (findStudentByEmail.length > 0) {
             console.log("Email already Exist");
             res.json({success: false, message: "Email already Exist"});
-            return;
-        }
+        } else if (findStaffByEmail.length > 0) {
+            console.log("Email already Exist");
+            res.json({success: false, message: "Email already Exist"});
+        } else {
             await controller.enrollStudents(formData)
             console.log('Successifully Enrolled');
             res.json({success: true, message: 'Successifully Enrolled' });
+        }
     } catch(error) {
         res.json({success: false, error: error.message});
     }
@@ -36,16 +42,25 @@ routes.post('/login', async(req, res) => {
         const email = formData.email;
         const userPassword = formData.password;
         const findStudentByEmail = await controller.selectStudentByEmail(email);
+        const findStaffByEmail = await controller.selectStaffByEmail(email);
+
         if(findStudentByEmail.length > 0) {
             console.log('Email found Please')
-            // console.log(findStudentByEmail);
             const password = findStudentByEmail[0].first_name;
             if(userPassword === password) {
-                console.log('Login successiful');
-            } else {
-                console.log('Please Check the password and the email')
+                console.log('Student Login successiful');
+            } else  {
+                console.log(' Student Please Check the password and the email')
             }
-        } else {
+        } else if(findStaffByEmail.length > 0) {
+            console.log('Email found Please')
+            const password = findStaffByEmail[0].password;
+            if(userPassword === password) {
+                console.log('Staff Login successiful');
+            } else  {
+                console.log(' Staff Please Check the password and the email')
+            }
+        }else {
             console.log('Email address not found Please Enroll')
         }
     } catch (error) {
