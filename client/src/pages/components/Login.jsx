@@ -1,8 +1,10 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../Footer';
 import Header from '../Header';
-import axios from 'axios';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -11,7 +13,7 @@ const Login = () => {
         email: '',
         password: ''
     });
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         console.log('formData',formData);
 
@@ -25,10 +27,15 @@ const Login = () => {
         const login_api = `${process.env.REACT_APP_API_URL}/api/login`;
 
         try {
-            const response = axios.post(login_api, formData);
-            console.log(response);
+            const response = await axios.post(login_api, formData);
+            const success = response.data.success;
+            if(success) {
+                toast.success(response.data.message);
+            }else {
+                toast.error(response.data.message);
+            }
         } catch (error) {
-            consol.log(error.message);
+            toast.error(error.message);
         }
     }
     const handleEnroll = () => {
@@ -39,6 +46,7 @@ const Login = () => {
     <Header />
     <div className="login-page">
         <div className="login-content">
+            <ToastContainer />
             <div className="login-title">
                 <h1>Login</h1>
             </div>

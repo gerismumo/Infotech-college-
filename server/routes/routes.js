@@ -52,20 +52,24 @@ routes.post('/login', async(req, res) => {
                 res.json({success: true, message: 'Login Successiful'});
             } else  {
                 console.log(' Student Please Check the password and the email')
+                res.json({success:false, message: 'Please Check the password and the email'});
             }
         } else if(findStaffByEmail.length > 0) {
             console.log('Email found Please')
             const password = findStaffByEmail[0].password;
             if(userPassword === password) {
                 console.log('Staff Login successiful');
+                res.json({success: true, message: 'Login Successful'})
             } else  {
                 console.log(' Staff Please Check the password and the email')
+                res.json({success: false, message: 'Please check the password and the email'});
             }
         }else {
             console.log('Email address not found Please Enroll')
+            res.json({success: false, message: 'Email not found Please Enroll'});
         }
     } catch (error) {
-        res.json({success: false, error: error.message});
+        res.json({success: false, message: error.message});
     }
 });
 
