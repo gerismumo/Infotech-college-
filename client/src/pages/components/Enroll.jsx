@@ -39,9 +39,24 @@ const Enroll = () => {
            additionalCourse: '',
         }
     )
-    const handleSubmit =(e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         console.log('formData',formData);
+        const enroll_api = `${process.env.REACT_APP_API_URL}/api/enroll`;
+
+        for(const key in formData) {
+            if(formData[key] === '') {
+                alert(`${key} is empty, Please fill`);
+                return;
+            }
+        } 
+
+        try {
+            const response = await axios.post(enroll_api, formData);
+            console.log(response);
+        }catch(error) {
+            console.log(error.message);
+        }
     }
   return (
     <>
