@@ -34,6 +34,45 @@ const controller = {
         } catch(error) {
             console.error(error.message);
         }
+    },
+    selectStudents: async () => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.selectStudent;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql, (err, result) => {
+                    if(err) {
+                        console.log(err);
+                        reject(err);
+                    }else {
+                        console.log(result);
+                        resolve(result);
+                    }
+                });
+            });
+
+        }catch (error)  {
+            console.error(error.message);
+        }
+    },
+    selectStudentByEmail: async (email) => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.selectStudentEmail;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql,[email], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+            });
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 }
 

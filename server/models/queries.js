@@ -4,7 +4,8 @@ const queries = {
         middle_name, last_name, student_email, phone_number, 
         gender, county, birth_date, grade, course, additional_course)
          VALUES(?,?,?,?,?,?,?,?,?,?,?)`,
-    selectStudent: 'SELECT * FROM student_table',
+    selectStudent: 'SELECT * FROM students_table',
+    selectStudentEmail: 'SELECT * FROM students_table WHERE student_email = ?',
 }
 
 module.exports = queries;
