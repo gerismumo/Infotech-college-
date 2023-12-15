@@ -1,9 +1,29 @@
-import React, { useState } from 'react'
-import Footer from '../Footer'
-import Header from '../Header'
-import { coursesDetails, otherCourses } from './Courses'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Footer from '../Footer';
+import Header from '../Header';
+import { coursesDetails, otherCourses } from './Courses';
 
 const Enroll = () => {
+    const [countiesList, setCountiesList] = useState([]);
+    const counties_api = `${process.env.REACT_APP_API_URL}/api/counties`;
+
+    useEffect(() => {
+        const fetchCounties = async() => {
+            try {
+                const response = await axios.get(counties_api);
+                const success = response.data.success;
+                if(success) {
+                    setCountiesList(response.data.data);
+                }
+            }catch(error) {
+                console.log(error.message);
+            }
+        }
+        fetchCounties();
+    },[counties_api]);
+
+    // console.log(countiesList);
     const[formData, setFormData] = useState(
         {
            firstName: '',
@@ -101,8 +121,9 @@ const Enroll = () => {
                                     value={formData.county}
                                     onChange={(e) => setFormData({...formData, county: e.target.value})}
                                     >
-                                        <option value="Mombasa">Mombasa</option>
-                                        <option value="Makueni">Makueni</option>
+                                        {countiesList.map((county) => (
+                                            <option key={county.code} value={county.name}>{county.name}</option>
+                                        ))}
                                     </select>
                                     <label htmlFor="birthDate">Date of Birth:</label>
                                     <input type="date"

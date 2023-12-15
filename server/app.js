@@ -4,12 +4,15 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config({path: './database/.env'});
 
-app.use(express.json())
+app.use(express.json());
 app.use(cors());
 
-const database = require('./database/db')
+const database = require('./database/db');
 
 const port = process.env.PORT;
+const routes = require('./routes/routes');
+
+app.use('/api', routes);
 
 const startServer = () => {
     database.createConnection();
