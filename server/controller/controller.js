@@ -1,10 +1,11 @@
-const database = require('../database/db');
+const createConnection= require('../database/db');
 const queries = require('../models/queries');
 
 
 const controller = {
     enrollStudents: async (formData) => {
         try {
+            const connection = await createConnection();
             const firstName = formData.firstName;
             const middleName = formData.middleName;
             const lastName = formData.lastName;
@@ -15,14 +16,13 @@ const controller = {
             const birthDate = formData.birthDate;
             const grade = formData.grade;
             const course = formData.course;
-            const additionCourse = formData.additionCourse;
+            const additionalCourse = formData.additionalCourse;
 
-            const connection = await database.createConnection();
-            console.log(connection);
+            
             const sql =  queries.enrollStudents;
-            console.log(formData);
+           
             const enroll = await new Promise((resolve, reject) => {
-                    connection.query(sql,[firstName, middleName, lastName, email, phoneNumber,gender , county, birthDate, grade, course, additionCourse], (err, result) => {
+                    connection.query(sql,[firstName, middleName, lastName, email, phoneNumber,gender , county, birthDate, grade, course, additionalCourse], (err, result) => {
                         if(err) {
                             reject(err);
                         }else {

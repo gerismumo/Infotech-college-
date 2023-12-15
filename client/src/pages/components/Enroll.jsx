@@ -53,6 +53,23 @@ const Enroll = () => {
 
         try {
             const response = await axios.post(enroll_api, formData);
+            const success = response.data.success;
+            if(success) {
+                setFormData({
+                    firstName: '',
+                    middleName: '',
+                    lastName: '',
+                    email: '',
+                    phoneNumber: '',
+                    gender: '',
+                    county: '',
+                    birthDate:'',
+                    grade: '',
+                    course: '',
+                    additionalCourse: '',
+                });
+                return;
+            }
             console.log(response);
         }catch(error) {
             console.log(error.message);

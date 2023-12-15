@@ -10,22 +10,18 @@ const config = {
     database: process.env.DATABASE
 }
 
-const createConnection = async() => {
-    const connection = mysql.createConnection(config);
-    try {
-        await new Promise((resolve, reject) => {
-            connection.connect((err) => {
-                if(err) {
-                    reject(err);
-                }else {
-                    resolve();
-                }
-            });
+const createConnection = () => {
+    return new Promise((resolve, reject) => {
+        const connection = mysql.createConnection(config);
+        connection.connect((err) => {
+            if(err) {
+                reject(err);
+            } else {
+                console.log('connection created');
+                resolve(connection);
+            }
         });
-        console.log('connection created');
-    } catch(error) {
-
-    }
+    });
 }
 
-module.exports = {createConnection};
+module.exports = createConnection;
