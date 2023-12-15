@@ -32,7 +32,7 @@ routes.post('/enroll', async(req, res) => {
             res.json({success: true, message: 'Successifully Enrolled' });
         }
     } catch(error) {
-        res.json({success: false, error: error.message});
+        res.json({success: false, message: error.message});
     }
 });
 
@@ -49,6 +49,7 @@ routes.post('/login', async(req, res) => {
             const password = findStudentByEmail[0].first_name;
             if(userPassword === password) {
                 console.log('Student Login successiful');
+                res.json({success: true, message: 'Login Successiful'});
             } else  {
                 console.log(' Student Please Check the password and the email')
             }

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
 import { coursesDetails, otherCourses } from './Courses';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Enroll = () => {
     const [countiesList, setCountiesList] = useState([]);
@@ -46,7 +48,7 @@ const Enroll = () => {
 
         for(const key in formData) {
             if(formData[key] === '') {
-                alert(`${key} is empty, Please fill`);
+                toast.error(`${key} is empty, Please fill`);
                 return;
             }
         } 
@@ -68,11 +70,12 @@ const Enroll = () => {
                     course: '',
                     additionalCourse: '',
                 });
-                return;
+                toast.success(response.data.message);
+            } else {
+                toast.error(response.data.message);
             }
-            console.log(response);
         }catch(error) {
-            console.log(error.message);
+            toast.error(error.message);
         }
     }
   return (
@@ -80,6 +83,7 @@ const Enroll = () => {
     <Header />
         <div className="enroll-page">
             <div className="enroll-content">
+                <ToastContainer />
                 <div className="enroll-title">
                     <h1>Enroll Now</h1>
                 </div>
