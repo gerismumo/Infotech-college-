@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer';
 import Header from '../Header';
+import axios from 'axios';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -13,6 +14,22 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('formData',formData);
+
+        for(const key in formData) {
+            if(formData[key] === "") {
+                alert(`${key} is empty`);
+                return;
+            }
+        }
+
+        const login_api = `${process.env.REACT_APP_API_URL}/api/login`;
+
+        try {
+            const response = axios.post(login_api, formData);
+            console.log(response);
+        } catch (error) {
+            consol.log(error.message);
+        }
     }
     const handleEnroll = () => {
         navigate('/enroll');

@@ -30,4 +30,27 @@ routes.post('/enroll', async(req, res) => {
     }
 });
 
+routes.post('/login', async(req, res) => {
+    try{
+        const formData = req.body;
+        const email = formData.email;
+        const userPassword = formData.password;
+        const findStudentByEmail = await controller.selectStudentByEmail(email);
+        if(findStudentByEmail.length > 0) {
+            console.log('Email found Please')
+            // console.log(findStudentByEmail);
+            const password = findStudentByEmail[0].first_name;
+            if(userPassword === password) {
+                console.log('Login successiful');
+            } else {
+                console.log('Please Check the password and the email')
+            }
+        } else {
+            console.log('Email address not found Please Enroll')
+        }
+    } catch (error) {
+        res.json({success: false, error: error.message});
+    }
+});
+
 module.exports = routes;
