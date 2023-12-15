@@ -2,12 +2,16 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import './App.css';
 import Home from './pages/Home';
+import Student from './pages/StaffPages/Student';
 import Contact from './pages/components/Contact';
 import Courses from './pages/components/Courses';
 import Enroll from './pages/components/Enroll';
 import Login from './pages/components/Login';
 import StaffPortal from './pages/components/StaffPortal';
 import StudentPortal from './pages/components/StudentPortal';
+import EnrollmentList from './pages/StaffPages/EnrollmentList';
+import CoursesList from './pages/StaffPages/CoursesList';
+import Lectures from './pages/StaffPages/Lectures';
 
 function App() {
   return (
@@ -18,7 +22,12 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/enroll' element={<Enroll />} />
         <Route path='/studentPortal' element={<StudentPortal />} />
-        <Route path='/staffPortal' element={<StaffPortal />} />
+        <Route path='/staffPortal' element={<StaffPortal />}>
+          <Route path='' element={<Student />} />
+          <Route path='enrollmentList' element={<EnrollmentList />} />
+          <Route path='coursesList' element={<CoursesList />} />
+          <Route path='lectures' element={<Lectures />} />
+        </Route>
         <Route path='/login' element={<Login />} />
       </Routes>
     </Router>
