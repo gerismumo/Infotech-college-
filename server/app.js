@@ -15,7 +15,7 @@ const routes = require('./routes/routes');
 app.use('/api', routes);
 
 const startServer = async () => {
-    await createConnection();
+    // await createConnection();
     app.listen( port, () => {
         console.log(`Server listening on Port ${port}`);
     })

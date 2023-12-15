@@ -101,4 +101,16 @@ routes.put('/updateApprove/:id', async(req, res) => {
     }
 });
 
+routes.delete('/deleteStudent/:id', async(req, res) => {
+    try {
+        const {id} = req.params;
+        await controller.deleteStudent(id);
+        
+        res.json({success: true, message: 'Student deleted successfully'});
+        
+    } catch(error) {
+        res.json({success: false, message: error.message});
+    }
+})
+
 module.exports = routes;

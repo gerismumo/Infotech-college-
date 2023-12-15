@@ -10,7 +10,8 @@ const queries = {
     selectStaffByEmail:'SELECT * FROM staff_table WHERE email = ?',
     selectApprovedStudents: 'SELECT * FROM students_table WHERE approved = 1',
     selectUnApprovedStudents: 'SELECT * FROM students_table WHERE approved = 0',
-    updateApproveStudent: 'UPDATE students_table SET approved = true WHERE id = ?'
+    updateApproveStudent: 'UPDATE students_table SET approved = true WHERE id = ?',
+    deleteStudent: 'DELETE FROM students_table WHERE id = ?',
 }
 
 module.exports = queries;

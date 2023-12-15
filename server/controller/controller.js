@@ -152,6 +152,26 @@ const controller = {
         } catch (error) {
             console.log(error.message);
         }
+    },
+    deleteStudent: async (id) => {
+        try{
+            const connection = await createConnection();
+            const sql = queries.deleteStudent;
+            return new Promise((resolve, reject) => {
+                connection.query(sql, id, (err, result) => {
+                    if(err) {
+                        console.log(err);
+                        reject(err);
+                    }else {
+                        console.log(result);
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        } catch(error) {
+            console.log(error.message);
+        }
     }
 }
 
