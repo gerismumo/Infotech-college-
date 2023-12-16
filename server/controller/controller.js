@@ -362,6 +362,7 @@ const controller = {
             return new Promise((resolve, reject) => {
                 connection.query(sql, [id], (err, result) => {
                     if(err) {
+                        console.log(err);
                         reject(err);
                     }else {
                         console.log(result);

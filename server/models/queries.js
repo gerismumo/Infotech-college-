@@ -21,7 +21,7 @@ const queries = {
     deleteCourse: 'DELETE FROM courses_table WHERE id = ?',
     selectOtherCourses: 'SELECT * FROM othercourses_table',
     insertOtherCourses: 'INSERT INTO othercourses_table (course, fees) VALUES (?, ?)',
-    updateOtherCourses: 'UPDATE othercourses SET course = ?, fees = ? WHERE id = ?',
+    updateOtherCourses: 'UPDATE othercourses_table SET course = ?, fees = ? WHERE id = ?',
     deleteOtherCourses: 'DELETE FROM othercourses_table WHERE id = ?',
 }
 

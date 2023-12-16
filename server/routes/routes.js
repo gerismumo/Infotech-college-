@@ -208,9 +208,10 @@ routes.put('/updateOtherCourse/:id', async(req, res) => {
 routes.delete('/deleteOtherCourse/:id', async(req, res) => {
     try{
         const {id} = req.params;
+        console.log(id);
         await controller.deleteOtherCourse(id);
         res.json({success: true, message: 'Course deleted successfully'});
-        
+
     }catch (err) {
         res.json({success: false, message: err.message});
     }

@@ -158,6 +158,50 @@ const CoursesList = () => {
         }
         
     }
+
+    const[otherCoursesEditForm , setOtherCoursesEditForm] = useState(false);
+    const[editOtherId, setEditOtherId] = useState(null);
+    const[editOtherForm, setEditOtherForm] = useState(null);
+
+    const handleEditOtherCourse = (id) => {
+        console.log(id);
+        setEditOtherId(id);
+
+        const editOtherCourse = otherCourses.find(course => course.id === id);
+        setEditOtherForm(editOtherCourse);
+        setOtherCoursesEditForm(true);
+    }
+    // console.log(editOtherForm);
+
+    const handleSubmitOtherCourseEdit = async(e) => {
+        e.preventDefault();
+        for(const key in editOtherForm) {
+            if(editOtherForm[key] === '') {
+                toast.error('Please fill all fields');
+                return;
+            }
+            const edit_other_api = `${process.env.REACT_APP_API_URL}/api/updateOtherCourse/${editOtherId}`;
+
+            try {
+                const response = await axios.put(edit_other_api, editOtherForm);
+                console.log(response);
+            }catch(error) {
+                toast.error(error.message);
+            }
+        }
+    }
+
+    const handleDeleteOtherCourse = async(id) => {
+       
+        const delete_other_course_api = `${process.env.REACT_APP_API_URL}/api/deleteOtherCourse/${id}`;
+
+        try {
+            const response = await axios.delete(delete_other_course_api);
+            console.log(response);
+        }catch(error) {
+            toast.error(error.message);
+        }
+    }
   return (
     <div className="courses-list">
         <div className="courses-content">
@@ -260,20 +304,50 @@ const CoursesList = () => {
                         <th><button onClick={handleAddOtherCourse}>Add Course</button></th>
                     </thead>
                     <tbody>
-                        <React.Fragment>
                             {otherCourses.length === 0 ? (
                                 <tr>
                                     <td colSpan='2'>No Data</td>
                                 </tr>
                             ): otherCourses.map((course) => (
+                            <React.Fragment key={course.id}>
                                 <tr key={course.id}>
                                     <td>{course.course}</td>
                                     <td>{course.fees}</td>
-                                    <td><button>Edit</button></td>
-                                    <td><button>Delete</button></td>
+                                    <td><button onClick={()=>handleEditOtherCourse(course.id)}>Edit</button></td>
+                                    <td><button onClick={() => handleDeleteOtherCourse(course.id)}>Delete</button></td>
                                 </tr>
+                                {otherCoursesEditForm && course.id === editOtherId && (
+                                    <div className="edit-course-form">
+                                        <div className="edit-course">
+                                            <div className="button">
+                                                <button onClick={() => setOtherCoursesEditForm(false)}>Close</button>
+                                            </div>
+                                            <div className="form">
+                                                <form onSubmit={(e) =>handleSubmitOtherCourseEdit(e)}>
+                                                    <label htmlFor="course">Course:</label>
+                                                    <input type="text"
+                                                    name='course'
+                                                    value={editOtherForm.course}
+                                                    onChange={(e) => setEditOtherForm({...editOtherForm, course: e.target.value})}
+                                                     />
+                                                    <label htmlFor="fees">Fees:</label>
+                                                    <input 
+                                                    type="number" 
+                                                    name="fees" 
+                                                    id="fees" 
+                                                    value={editOtherForm.fees}
+                                                    onChange={(e) => setEditOtherForm({...editOtherForm, fees: e.target.value})}
+                                                    />
+                                                    <div className="button">
+                                                        <button type='submit'>Edit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </React.Fragment>
                             ))}
-                        </React.Fragment>
                     </tbody>
                 </table>
             </div>
