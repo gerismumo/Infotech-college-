@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Footer from '../Footer';
 import Header from '../Header';
 
 const StaffPortal = () => {
@@ -29,6 +30,7 @@ const StaffPortal = () => {
             
         </div>
     </div>
+    <Footer />
     </>
     
   )
