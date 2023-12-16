@@ -166,6 +166,54 @@ routes.delete('/deleteCourse/:id', async(req, res) => {
     }catch(error) {
         res.json({success: false, message: error.message});
     }
+});
+
+routes.get('/otherCoursesList', async (req, res) => {
+    try {
+        const data = await controller.otherCourses();
+        res.json({success: true, data: data}); 
+    }catch(error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
+routes.post('/addOtherCourse', async (req, res) => {
+    try {
+        const otherCourse = req.body;
+        const course = otherCourse.course;
+        const fees = otherCourse.fees;
+        await controller.insertOtherCourses(course, fees);
+
+        res.json({success: true, message: 'Course added successfully'})
+    }catch(error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
+routes.put('/updateOtherCourse/:id', async(req, res) => {
+    try {
+        const {id} = req.params;
+
+        const otherCourse = req.body;
+        const course = otherCourse.course;
+        const fees = otherCourse.fees;
+
+        await controller.updateOtherCourse(id, course, fees);
+        res.json({success: true, message: 'Course updated successfully'})
+    } catch(error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
+routes.delete('/deleteOtherCourse/:id', async(req, res) => {
+    try{
+        const {id} = req.params;
+        await controller.deleteOtherCourse(id);
+        res.json({success: true, message: 'Course deleted successfully'});
+        
+    }catch (err) {
+        res.json({success: false, message: err.message});
+    }
 })
 
 module.exports = routes;

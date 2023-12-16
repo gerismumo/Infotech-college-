@@ -294,7 +294,86 @@ const controller = {
         } catch (error) {
             console.log(error);
         }
-    }
+    },
+    otherCourses: async () => {
+        try{
+            const connection = await createConnection();
+            const sql = queries.selectOtherCourses;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql, (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        }catch(error) {
+            console.log(error);
+        }
+    },
+    insertOtherCourses: async(course, fees) => {
+        try{
+            const connection = await createConnection();
+            const sql = queries.insertOtherCourses;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql,[course, fees], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        console.log(result);
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        }catch(error) {
+            console.log(error);
+        }
+    },
+    updateOtherCourse: async (id, course, fees) => {
+        try{
+            const connection = await createConnection();
+            const sql = queries.updateOtherCourses;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql,[course, fees, id], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+                 connection.end();
+            });
+
+        } catch(error) {
+            console.log(error);
+        }
+    },
+    deleteOtherCourse: async (id) => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.deleteOtherCourses;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql, [id], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        console.log(result);
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 
 module.exports = controller;

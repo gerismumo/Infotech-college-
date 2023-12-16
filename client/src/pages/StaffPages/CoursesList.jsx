@@ -105,9 +105,59 @@ const CoursesList = () => {
         } catch (error) {
             toast.error(error.message);
         }
-        console.log(editForm);
     }
 
+    const[otherCourses, setOtherCourses] = useState([]);
+
+    const other_courses_api = `${process.env.REACT_APP_API_URL}/api/otherCoursesList`;
+
+    useEffect(() => {
+        const coursesList = async() => {
+            try {
+                const response = await axios.get(other_courses_api);
+                const success = response.data.success;
+                if(success) {
+                    const courseData = response.data.data;
+                    setOtherCourses(courseData);
+                }
+                
+            }catch (error) {
+                toast.error(error.message);
+            }
+        }
+        coursesList();
+    }, [other_courses_api]);
+
+    // console.log('coursesList', otherCourses);
+
+    const[openOtherCourseForm, setOpenOtherCourseForm] = useState(false);
+    const handleAddOtherCourse = () => {
+        setOpenOtherCourseForm(true);
+    }
+    const[otherCourseForm, setOtherCourseForm] = useState({
+        course: '',
+        fees:'',
+    });
+
+    const handleSubmitOtherCourse = async(e) => {
+        e.preventDefault();
+
+        for(const key in otherCourseForm){
+            if(otherCourseForm[key] === '') {
+                toast.error('Please fill all fields');
+                return;
+            }
+        }
+
+        const post_other_course = `${process.env.REACT_APP_API_URL}/api/addOtherCourse`;
+        try{
+            const response = await axios.post(post_other_course, otherCourseForm);
+            console.log(response);
+        }catch(error) {
+            toast.error(error.message);
+        }
+        
+    }
   return (
     <div className="courses-list">
         <div className="courses-content">
@@ -199,8 +249,66 @@ const CoursesList = () => {
                     </tbody>
                 </table>
             </div>
+            <div className="other-course-title">
+                <h2>Other Courses</h2>
+            </div>
+            <div className="other-courses-table">
+                <table>
+                    <thead>
+                        <th>Course</th>
+                        <th>Fees</th>
+                        <th><button onClick={handleAddOtherCourse}>Add Course</button></th>
+                    </thead>
+                    <tbody>
+                        <React.Fragment>
+                            {otherCourses.length === 0 ? (
+                                <tr>
+                                    <td colSpan='2'>No Data</td>
+                                </tr>
+                            ): otherCourses.map((course) => (
+                                <tr key={course.id}>
+                                    <td>{course.course}</td>
+                                    <td>{course.fees}</td>
+                                    <td><button>Edit</button></td>
+                                    <td><button>Delete</button></td>
+                                </tr>
+                            ))}
+                        </React.Fragment>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
+        {openOtherCourseForm && (
+            <div className="modal-add-course">
+                <div className="add-course-form">
+                    <div className="button">
+                        <button onClick={() => setOpenOtherCourseForm(false)}>Close</button>
+                    </div>
+                    <div className="form">
+                        <form onSubmit={(e) => handleSubmitOtherCourse(e)}>
+                            <label htmlFor="course">Course:</label>
+                            <input type="text" 
+                            name='course'
+                            value={otherCourseForm.course}
+                            onChange={(e) => setOtherCourseForm({...otherCourseForm, course: e.target.value})}
+                            />
+                            <label htmlFor="fees">Fees:</label>
+                            <input 
+                            type="number" 
+                            name="fees" 
+                            id="fees" 
+                            min='0'
+                            value={otherCourseForm.fees}
+                            onChange={(e) => setOtherCourseForm({...otherCourseForm, fees:e.target.value})}
+                            />
+                            <div className ='button'>
+                                <button type='submit'>Add Course</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        )}
         {addCourseForm && (
             <div className="modal-add-course">
                 <div className="add-course-form">

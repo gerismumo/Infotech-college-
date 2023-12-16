@@ -19,6 +19,10 @@ const queries = {
     selectCourses: 'SELECT * FROM courses_table',
     updateCourse: 'UPDATE courses_table SET course_name = ?, examiner = ?, duration = ?, grade = ?, fees = ? WHERE id = ?',
     deleteCourse: 'DELETE FROM courses_table WHERE id = ?',
+    selectOtherCourses: 'SELECT * FROM othercourses_table',
+    insertOtherCourses: 'INSERT INTO othercourses_table (course, fees) VALUES (?, ?)',
+    updateOtherCourses: 'UPDATE othercourses SET course = ?, fees = ? WHERE id = ?',
+    deleteOtherCourses: 'DELETE FROM othercourses_table WHERE id = ?',
 }
 
 module.exports = queries;
