@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
 
 const CoursesList = () => {
     const[courseList, setCourseList] = useState([]);
@@ -8,9 +10,45 @@ const CoursesList = () => {
         setAddCourseForm(true);
     }
 
+    const[formData, setFormData] = useState({
+        courseName: '',
+        examiner: '',
+        duration: '',
+        grade: '',
+        fees: '',
+    });
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        for(const key in formData) {
+            if(formData[key]=== '') {
+                toast.error('Please fill all fields');
+                return;
+            }
+        }
+
+        const courses_api = `${process.env.REACT_APP_API_URL}/api/addCourses`;
+
+        try{
+            const response = await axios.post(courses_api, formData);
+            const success = response.data.success;
+            if(success) {
+                toast.success(response.data.message);
+            }else {
+                toast.error(response.data.message);
+            }
+            console.log(response);
+        }catch(error) {
+            toast.error(error.message);
+        }
+        
+    }
+
   return (
     <div className="courses-list">
         <div className="courses-content">
+            <ToastContainer />
             <div className="course-list-table">
                 <table>
                     <thead>
@@ -48,21 +86,31 @@ const CoursesList = () => {
                         <button onClick={() => setAddCourseForm(false)}>Close</button>
                     </div>
                     <div className="form">
-                        <form action="">
+                        <form onSubmit={(e) => handleSubmit(e)}>
                             <label htmlFor="courseName">Course:</label>
                             <input type="text" 
                             name='courseName'
+                            value={formData.courseName}
+                            onChange={(e) => setFormData({...formData, courseName: e.target.value})}
                             />
                             <label htmlFor="examiner">Examiner:</label>
                             <input type="text" 
                             name='examiner'
+                            value={formData.examiner}
+                            onChange={(e) => setFormData({...formData, examiner: e.target.value})}
                             />
                             <label htmlFor="duration">Duration:</label>
                             <input type="text" 
                             name='duration'
+                            value={formData.duration}
+                            onChange={(e) => setFormData({...formData, duration: e.target.value})}
                             />
                             <label htmlFor="grade">Entry Grade:</label>
-                            <select name="grade" id="grade">
+                            <select name="grade" 
+                            id="grade"
+                            value={formData.grade}
+                            onChange={(e) => setFormData({...formData, grade: e.target.value})}
+                            >
                                 <option value="A">A</option>
                                 <option value="A-">A-</option>
                                 <option value="B+">B+</option>
@@ -81,6 +129,8 @@ const CoursesList = () => {
                             name="fees" 
                             id="fees" 
                             min={0}
+                            value={formData.fees}
+                            onChange={(e) => setFormData({...formData, fees: e.target.value})}
                             />
                             <div className="button">
                                 <button type='submit'>Add</button>

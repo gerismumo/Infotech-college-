@@ -15,6 +15,7 @@ const queries = {
     updateStudent: `UPDATE students_table SET first_name = ?, middle_name = ?, last_name = ?,
                     student_email = ?, phone_number = ?, gender = ?, county = ?,
                     birth_date = ?, grade = ?, course = ?, additional_course = ? WHERE id = ?`,
+    addCourses:'INSERT INTO courses_table (course_name, examiner, duration, grade, fees) VALUES (?, ?, ?, ?, ?)',
 }
 
 module.exports = queries;

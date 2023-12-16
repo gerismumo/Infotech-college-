@@ -127,4 +127,15 @@ routes.put('/updateUser/:id', async (req, res) => {
     }
 });
 
+routes.post('/addCourses', async (req, res) => {
+    try {
+        const formData = req.body;
+        
+        await controller.addCourses(formData);
+        res.json({success: true, message: 'Successful added courses'})
+    }catch(error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
 module.exports = routes;

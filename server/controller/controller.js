@@ -204,6 +204,31 @@ const controller = {
         } catch(error) {
             console.log(error.message);
         }
+    },
+    addCourses: async(formData) => {
+        try{
+            const connection = await createConnection();
+            const sql = queries.addCourses;
+
+            const courseName = formData.courseName;
+            const examiner = formData.examiner;
+            const duration = formData.duration;
+            const grade = formData.grade;
+            const fees = formData.fees;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql,[courseName, examiner, duration, grade, fees], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        } catch(error) {
+            console.log(error.message);
+        }
     }
 }
 
