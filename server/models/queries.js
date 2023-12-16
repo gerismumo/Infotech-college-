@@ -12,6 +12,9 @@ const queries = {
     selectUnApprovedStudents: 'SELECT * FROM students_table WHERE approved = 0',
     updateApproveStudent: 'UPDATE students_table SET approved = true WHERE id = ?',
     deleteStudent: 'DELETE FROM students_table WHERE id = ?',
+    updateStudent: `UPDATE students_table SET first_name = ?, middle_name = ?, last_name = ?,
+                    student_email = ?, phone_number = ?, gender = ?, county = ?,
+                    birth_date = ?, grade = ?, course = ?, additional_course = ? WHERE id = ?`,
 }
 
 module.exports = queries;

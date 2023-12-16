@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import { coursesDetails, otherCourses } from '../components/Courses';
 
 const EnrollmentList = () => {
@@ -51,8 +52,6 @@ const EnrollmentList = () => {
 
      
 
-    const[formData, setFormData] = useState('');
-
     const [countiesList, setCountiesList] = useState([]);
     const counties_api = `${process.env.REACT_APP_API_URL}/api/counties`;
 
@@ -78,13 +77,40 @@ const EnrollmentList = () => {
         setEditForm(editUser);
         setOpenEdit(true);
      }
-     console.log('editForm',editForm);
-     const handleSubmitEdit = () => {
-        
+
+     const handleSubmitEdit = async(e) => {
+        e.preventDefault();
+
+        // console.log('edit form',editForm);
+
+        for(const key in editForm) {
+            if(editForm[key] === '') {
+                toast.error(`Please fill all the values`);
+                return;
+            }
+        }
+        const edit_user_api = `${process.env.REACT_APP_API_URL}/api/updateUser/${editId}`;
+        try {
+            const response = await axios.put(edit_user_api, editForm);
+            const success = response.data.success;
+            if(success) {
+                toast.success(response.data.message)
+                setTimeout(() => {
+                    setOpenEdit(false);
+                }, 1000);
+                
+            } else {
+                toast.error(response.data.message)
+            }
+            // console.log(response);
+        } catch (error) {
+            toast.error(error.message);
+        }
      }
       
   return (
     <div className="enrollment-page">
+        <ToastContainer />
         <div className="enroll-content">
             <div className="enroll-table">
                 <table>
@@ -135,7 +161,7 @@ const EnrollmentList = () => {
                                                 <div className="close-button">
                                                     <button onClick={() => setOpenEdit(false)}>Close</button>
                                                 </div>
-                                                <form onSubmit={handleSubmitEdit}>
+                                                <form onSubmit={(e) => handleSubmitEdit(e)}>
                                                     <div className="form-parts">
                                                         <div className="form-part1">
                                                             <label htmlFor="firstName">FirstName:</label>

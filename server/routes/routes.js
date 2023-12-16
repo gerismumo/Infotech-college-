@@ -107,10 +107,24 @@ routes.delete('/deleteStudent/:id', async(req, res) => {
         await controller.deleteStudent(id);
         
         res.json({success: true, message: 'Student deleted successfully'});
-        
+
     } catch(error) {
         res.json({success: false, message: error.message});
     }
-})
+});
+
+routes.put('/updateUser/:id', async (req, res) => {
+    try{
+        const {id} = req.params;
+        const editForm = req.body;
+        
+        // console.log(id);
+        // console.log(editForm);
+        await controller.updateStudent(id, editForm);
+        res.json({success: true, message: 'Student updated successfully'});
+    }catch (error) {
+        req.json({success: false, message: error.message});
+    }
+});
 
 module.exports = routes;

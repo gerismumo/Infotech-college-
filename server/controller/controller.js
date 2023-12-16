@@ -172,6 +172,38 @@ const controller = {
         } catch(error) {
             console.log(error.message);
         }
+    },
+    updateStudent: async (id, editForm) => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.updateStudent;
+            const firstName = editForm.first_name;
+            const middleName = editForm.middle_name;
+            const lastName = editForm.last_name;
+            const email =  editForm.student_email;
+            const phoneNumber = editForm.student_phone;
+            const gender = editForm.gender;
+            const county = editForm.county;
+            const birthDate = editForm.birth_date;
+            const grade = editForm.grade;
+            const course = editForm.course;
+            const additionalCourse = editForm.additional_course;
+
+            return new Promise((resolve, reject) => {
+
+                connection.query(sql,[firstName, middleName, lastName, email, phoneNumber, gender, county, birthDate, grade, course, additionalCourse, id], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        console.log(result);
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        } catch(error) {
+            console.log(error.message);
+        }
     }
 }
 
