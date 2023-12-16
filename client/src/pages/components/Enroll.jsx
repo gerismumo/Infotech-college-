@@ -6,6 +6,8 @@ import { coursesDetails, otherCourses } from './Courses';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
 const Enroll = () => {
     const [countiesList, setCountiesList] = useState([]);
     const counties_api = `${process.env.REACT_APP_API_URL}/api/counties`;

@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { coursesDetails, otherCourses } from '../components/Courses';
 
 const EnrollmentList = () => {
     const[enrollmentList, setEntrollmentList] = useState([]);
-    cont[openEdit, setOpenEdit] = useState(false);
+    const[openEdit, setOpenEdit] = useState(false);
+    const[editId, setEditId] = useState(null);
 
     const enroll_student_api = `${process.env.REACT_APP_API_URL}/api/enrolledStudents`;
 
@@ -47,26 +49,38 @@ const EnrollmentList = () => {
         }
      }
 
-     const[formData, setFormData] = useState(
-        {
-           firstName: '',
-           middleName: '',
-           lastName: '',
-           email: '',
-           phoneNumber: '',
-           gender: '',
-           county: '',
-           birthDate:'',
-           grade: '',
-           course: '',
-           additionalCourse: '',
-        }
-    )
-    
-     const handleEdit = (id) => {
+     
 
-        const findEditStudent = enrollmentList.find(student => student.id === id);
-        console.log('findEditStudent',findEditStudent);
+    const[formData, setFormData] = useState('');
+
+    const [countiesList, setCountiesList] = useState([]);
+    const counties_api = `${process.env.REACT_APP_API_URL}/api/counties`;
+
+    useEffect(() => {
+        const fetchCounties = async() => {
+            try {
+                const response = await axios.get(counties_api);
+                const success = response.data.success;
+                if(success) {
+                    setCountiesList(response.data.data);
+                }
+            }catch(error) {
+                console.log(error.message);
+            }
+        }
+        fetchCounties();
+    },[counties_api]);
+
+    const [editForm, setEditForm] = useState(null);
+     const handleEdit = (id) => {
+        setEditId(id);
+        const editUser = enrollmentList.find(student => student.id === id);
+        setEditForm(editUser);
+        setOpenEdit(true);
+     }
+     console.log('editForm',editForm);
+     const handleSubmitEdit = () => {
+        
      }
       
   return (
@@ -119,40 +133,40 @@ const EnrollmentList = () => {
             {openEdit && (
                 <>
                     <div className="enroll-form">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmitEdit}>
                             <div className="form-parts">
                                 <div className="form-part1">
                                     <label htmlFor="firstName">FirstName:</label>
                                     <input type="text" 
                                     name='firstName'
-                                    value={formData.firstName} 
-                                    onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                                    value={editForm.first_name} 
+                                    onChange={(e) => setEditForm({...editForm, first_name: e.target.value})}
                                     />
                                     <label htmlFor="middleName">Middle Name:</label>
                                     <input type="text" 
                                     name='middleName'
-                                    value={formData.middleName}
-                                    onChange={(e) => setFormData({...formData, middleName: e.target.value})}
+                                    value={editForm.middle_name}
+                                    onChange={(e) => setEditForm({...editForm, middle_name: e.target.value})}
                                      />
                                     <label htmlFor="lastName">Last Name:</label>
                                     <input type="text"
                                      name='lastName'
-                                     value={formData.lastName}
-                                     onChange={(e) => setFormData({...formData, lastName:e.target.value})}
+                                     value={editForm.last_name}
+                                     onChange={(e) => setEditForm({...editForm, last_name:e.target.value})}
                                       />
                                     <label htmlFor="email">Email:</label>
                                     <input type="email" 
                                     name="email" 
                                     id="email" 
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                    value={editForm.student_email}
+                                    onChange={(e) => setEditForm({...editForm, student_email: e.target.value})}
                                     />
                                     <label htmlFor="phoneNumber">Phone Number:</label>
                                     <input type="tel" 
                                     name="phoneNumber" 
                                     id="phoneNumber" 
-                                    value={formData.phoneNumber}
-                                    onChange={(e) => setFormData({...formData, phoneNumber: e.target.value})}
+                                    value={editForm.phone_number}
+                                    onChange={(e) => setEditForm({...editForm, phone_number: e.target.value})}
                                     />
                                     <label htmlFor="gender">Gender:</label>
                                     <div className="gender">
@@ -161,7 +175,8 @@ const EnrollmentList = () => {
                                             name="gender" 
                                             id="gender"  
                                             value='Male'
-                                            onChange={(e) => setFormData({...formData, gender: e.target.value})}
+                                            checked={editForm.gender === 'Male'}
+                                            onChange={(e) => setEditForm({...editForm, gender: e.target.value})}
                                             />
                                             <label htmlFor="male">Male</label>
                                         </div>
@@ -170,7 +185,8 @@ const EnrollmentList = () => {
                                             name="gender" 
                                             id="gender"  
                                             value='Female' 
-                                            onChange={(e) => setFormData({...formData, gender: e.target.value})}
+                                            checked={editForm.gender === 'Female'}
+                                            onChange={(e) => setEditForm({...editForm, gender: e.target.value})}
                                             />
                                             <label htmlFor="female">Female</label>
                                         </div>
@@ -180,8 +196,8 @@ const EnrollmentList = () => {
                                     <label htmlFor="county">County:</label>
                                     <select name="county" 
                                     id="county" 
-                                    value={formData.county}
-                                    onChange={(e) => setFormData({...formData, county: e.target.value})}
+                                    value={editForm.county}
+                                    onChange={(e) => setEditForm({...editForm, county: e.target.value})}
                                     >
                                         {countiesList.map((county) => (
                                             <option key={county.code} value={county.name}>{county.name}</option>
@@ -191,14 +207,14 @@ const EnrollmentList = () => {
                                     <input type="date"
                                      name="birthDate" 
                                      id="birthDate" 
-                                     value={formData.birthDate}
-                                     onChange={(e) => setFormData({...formData, birthDate: e.target.value})}
+                                     value={editForm.birth_date}
+                                     onChange={(e) => setEditForm({...editForm, birth_date: e.target.value})}
                                      />
                                     <label htmlFor="grade">KCSE Grade:</label>
                                     <select name="grade" 
                                     id="grade"
-                                    value={formData.grade}
-                                    onChange={(e) => setFormData({...formData, grade: e.target.value})}
+                                    value={editForm.grade}
+                                    onChange={(e) => setEditForm({...editForm, grade: e.target.value})}
                                     >
                                         <option value="A">A</option>
                                         <option value="B+">B+</option>
@@ -215,8 +231,8 @@ const EnrollmentList = () => {
                                     <label htmlFor="course">Course:</label>
                                     <select name="course" 
                                     id="course"
-                                    value={formData.course}
-                                    onChange={(e) => setFormData({...formData, course: e.target.value})}
+                                    value={editForm.course}
+                                    onChange={(e) => setEditForm({...editForm, course: e.target.value})}
                                     >
                                         <option value='None'>None</option>
                                         {coursesDetails.map((course) => (
@@ -226,8 +242,8 @@ const EnrollmentList = () => {
                                     <label htmlFor="additionalCourses">Additional Courses:</label>
                                         <select name="additionalCourses" 
                                         id="additionalCourses"
-                                        value={formData.additionalCourse}
-                                        onChange={(e) => setFormData({...formData, additionalCourse: e.target.value})}
+                                        value={editForm.additional_course}
+                                        onChange={(e) => setEditForm({...editForm, additional_course: e.target.value})}
                                         >
                                             <option value='None'>None</option>
                                         {otherCourses.map((course) => (
