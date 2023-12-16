@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [openPortal, setOpenPortal] = useState(false);
+    const [adminList, setAdminList] = useState(false);
 
     const handleDropDown = () => {
         setOpenPortal(true);
@@ -12,6 +13,13 @@ const Header = () => {
     
     const handleDropDownClose = () => {
         setOpenPortal(false);
+    }
+
+    const handleDropDownAdmin = () => {
+        setAdminList(true);
+    }
+    const handleDropDownAdminClose = () => {
+        setAdminList(false);
     }
 
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
@@ -23,7 +31,7 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
       }, []);
-      
+
   return (
     <div className='header' onMouseLeave={handleDropDownClose}>
         <div className="social-links">
@@ -58,9 +66,20 @@ const Header = () => {
                                 <Link to='/login'>Staff Portal</Link>
                             </div>
                         )}
-                        
                     </div>
-                    
+                    <div className="portal-login" onMouseLeave={handleDropDownAdminClose}>
+                        <div className="portal-main-link" >
+                            <Link  className='portal' to="" onMouseEnter={handleDropDownAdmin} >Admin List</Link>
+                        </div>
+                        {adminList && (
+                            <div className="portal-dropdown" onMouseLeave={handleDropDownAdminClose}>
+                                <Link to=''>Students List</Link>
+                                <Link to='enrollmentList'>Enrollment List</Link>
+                                <Link to='coursesList'>Courses List</Link>
+                                <Link to='lecturer'>Lecturer List</Link>
+                            </div>
+                        )}
+                    </div>
                     </div>
                     <div className="apply-link">
                         <Link  className ='apply-now' to="/enroll">Apply Now</Link>

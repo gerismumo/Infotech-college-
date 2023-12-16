@@ -9,25 +9,9 @@ const StaffPortal = () => {
     <Header />
     <div className="staff-portal">
         <div className="staff-portal-content">
-          <div className="staff-page-layout">
-              <div className="side-bar">
-                  <div className="admin-name">
-                    <h2>Gerald</h2>
-                    <p>Admin</p>
-                  </div>
-                  <div className="side-links">
-                    <Link to=''>Students List</Link>
-                    <Link to='enrollmentList'>Enrollment List</Link>
-                    <Link to='coursesList'>Courses List</Link>
-                    <Link to='lecturer'>Lecturer List</Link>
-                    <button>Log out</button>
-                  </div>
-                </div>
-                <div className="staff-content">
-                  <Outlet/>
-              </div>
-          </div>
-            
+            <div className="staff-content">
+                <Outlet/>
+            </div>
         </div>
     </div>
     <Footer />

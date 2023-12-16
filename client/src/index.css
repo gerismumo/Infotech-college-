@@ -1066,68 +1066,11 @@ code {
   margin-top: 190px;
   margin-bottom: 70px;
 }
-.staff-portal .staff-page-layout {
-  display: flex;
-}
 
-.staff-portal .staff-page-layout .side-bar {
-  width: 200px;
-  background-color: var(---lightBlue);
-  display: flex;
-  flex-direction: column;
-  padding: 0 40px 20px;
-  align-items: center;
-  height: 80vh;
-  position: fixed;
-  overflow: auto;
-  z-index: 999;
-}
 .staff-portal .staff-page-layout .staff-content {
-  margin-left: 300px;
+  /* margin-left: 300px; */
 }
-.staff-portal .staff-page-layout .side-bar .admin-name {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-}
-.staff-portal .staff-page-layout .side-bar .admin-name h2{
-  color: var(---darkBlack);
-  font-weight: 900;
-  font-size: 30px;
-  margin-bottom: 0;
-}
-.staff-portal .staff-page-layout .side-bar .admin-name p {
-  font-weight: 700;
-  font-size: 20px;
-}
-.staff-portal .staff-page-layout .side-bar .side-links {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.staff-portal .staff-page-layout .side-bar .side-links a {
-  text-decoration: none;
-  font-size: 25px;
-  color: var(---white);
-  font-weight: 700;
-}
-.staff-portal .staff-page-layout .side-bar .side-links button {
-  padding: 10px 15px;
-  width: 100px;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 600;
 
-}
-.staff-portal .staff-page-layout .side-bar .side-links button:hover {
-  background-color: var(---grey);
-}
-.staff-portal .staff-page-layout .side-bar .side-links a:hover {
-  color: var(---darkBlack);
-}
 /* student portal */
 .student-portal {
   display: flex;
