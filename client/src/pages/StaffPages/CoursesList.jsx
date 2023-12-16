@@ -1,11 +1,32 @@
-import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 const CoursesList = () => {
     const[courseList, setCourseList] = useState([]);
 
     const [addCourseForm, setAddCourseForm] = useState(false);
+    const[openEditForm, setOpenEditForm] = useState(false);
+
+    const courses_api = `${process.env.REACT_APP_API_URL}/api/coursesList`;
+
+    useEffect(() => {
+        const coursesList = async() => {
+            try {
+                const response = await axios.get(courses_api);
+                const success = response.data.success;
+                if(success) {
+                    const courseData = response.data.data;
+                    setCourseList(courseData);
+                }
+                
+            }catch (error) {
+                toast.error(error.message);
+            }
+        }
+        coursesList();
+    }, [courses_api]);
+    
     const handleAddCourse = () => {
         setAddCourseForm(true);
     }
@@ -38,11 +59,53 @@ const CoursesList = () => {
             }else {
                 toast.error(response.data.message);
             }
+        }catch(error) {
+            toast.error(error.message);
+        }  
+    }
+
+    const handleDelete = async(id) => {
+        console.log(id);
+        const delete_course = `${process.env.REACT_APP_API_URL}/api/deleteCourse/${id}`;
+
+        try {
+            const response = await axios.delete(delete_course);
             console.log(response);
+
         }catch(error) {
             toast.error(error.message);
         }
-        
+    }
+
+    const[editId, setEditId] = useState(null);
+    const[editForm, setEditForm] = useState(null);
+
+    const handleEdit = (id) => {
+        console.log(id);
+        setEditId(id);
+        const editCourse = courseList.find(course => course.id === id);
+        setEditForm(editCourse);
+        setOpenEditForm(true);
+    }
+
+    const handleSubmitEdit = async(e) => {
+        e.preventDefault();
+
+        for(const key in editForm) {
+            if(editForm[key] === '') {
+                toast.error('Please fill all fields');
+                return;
+            }
+        }
+        const edit_courses_api = `${process.env.REACT_APP_API_URL}/api/updateCourse/${editId}`;
+
+        try {
+            const response = await axios.put(edit_courses_api, editForm);
+            console.log(response);
+        } catch (error) {
+            toast.error(error.message);
+        }
+        console.log(editForm);
     }
 
   return (
@@ -65,13 +128,72 @@ const CoursesList = () => {
                                 <td>No Courses Available</td>
                             </tr>
                         ) : courseList.map((course) => (
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            <React.Fragment key={course.id}>
+                                <tr key={course.id}>
+                                    <td>{course.course_name}</td>
+                                    <td>{course.examiner}</td>
+                                    <td>{course.duration}</td>
+                                    <td>{course.grade}</td>
+                                    <td>{course.fees}</td>
+                                    <td><button onClick={() =>handleEdit(course.id)}>Edit</button></td>
+                                    <td><button onClick={() =>handleDelete(course.id)}>Delete</button></td>
+                                </tr>
+                                {openEditForm && course.id === editId && (
+                                    <div className="edit-course-form">
+                                        <div className="edit-form">
+                                            <div className="button-close">
+                                                <button onClick={() => setOpenEditForm(false)}>Close</button>
+                                            </div>
+                                            <div className="form">
+                                                <form onSubmit={(e) => handleSubmitEdit(e)}>
+                                                    <label htmlFor="courseName">Course:</label>
+                                                    <input type="text" 
+                                                    name='course_name' 
+                                                    value={editForm.course_name}
+                                                    onChange={(e) => setEditForm({...editForm, course_name: e.target.value})}
+                                                    />
+                                                    <label htmlFor="examiner">Examiner:</label>
+                                                    <input type="text" 
+                                                    name='examiner'
+                                                    value={editForm.examiner}
+                                                    onChange={(e) => setEditForm({...editForm, examiner:e.target.value})}
+                                                    />
+                                                    <label htmlFor="grade">Grade</label>
+                                                    <select name="grade" 
+                                                    id="grade"
+                                                    value={editForm.grade}
+                                                    onChange={(e) => setEditForm({...editForm, grade: e.target.value})}
+                                                    >
+                                                        <option value="A">A</option>
+                                                        <option value="A-">A-</option>
+                                                        <option value="B+">B+</option>
+                                                        <option value="B">B</option>
+                                                        <option value="B-">B-</option>
+                                                        <option value="C+">C+</option>
+                                                        <option value="C">C</option>
+                                                        <option value="C-">C-</option>
+                                                        <option value="D+">D+</option>
+                                                        <option value="D">D</option>
+                                                        <option value="D-">D-</option>
+                                                        <option value="E">E</option>
+                                                    </select>
+                                                    <label htmlFor="fees">Fees:</label>
+                                                    <input type="text" 
+                                                    name='fees'
+                                                    value={editForm.fees}
+                                                    onChange={(e) => setEditForm({...editForm, fees:e.target.value})}
+                                                    />
+                                                    <div className="button">
+                                                        <button type='Submit'>Edit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                )}
+                            </React.Fragment>
+                            
                         ))}
                        
                     </tbody>

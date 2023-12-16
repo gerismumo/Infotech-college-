@@ -16,6 +16,9 @@ const queries = {
                     student_email = ?, phone_number = ?, gender = ?, county = ?,
                     birth_date = ?, grade = ?, course = ?, additional_course = ? WHERE id = ?`,
     addCourses:'INSERT INTO courses_table (course_name, examiner, duration, grade, fees) VALUES (?, ?, ?, ?, ?)',
+    selectCourses: 'SELECT * FROM courses_table',
+    updateCourse: 'UPDATE courses_table SET course_name = ?, examiner = ?, duration = ?, grade = ?, fees = ? WHERE id = ?',
+    deleteCourse: 'DELETE FROM courses_table WHERE id = ?',
 }
 
 module.exports = queries;

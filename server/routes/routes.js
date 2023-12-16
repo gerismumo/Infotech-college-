@@ -138,4 +138,34 @@ routes.post('/addCourses', async (req, res) => {
     }
 });
 
+routes.get('/coursesList', async (req, res) => {
+    try {
+        const data = await controller.selectCourses();
+        res.json({success: true, data: data}); 
+    }catch(error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
+routes.put('/updateCourse/:id', async (req, res) => {
+    try {
+        const {id} = req.params;
+        const editForm = req.body;
+        await controller.updateCourse(id, editForm);
+        res.json({success: true, message:'Course updated successfully'});
+    } catch (error) {
+        res.json({success: false, message: error.message});
+    }
+});
+
+routes.delete('/deleteCourse/:id', async(req, res) => {
+    try {
+        const {id} = req.params;
+        await controller.deleteCourse(id);
+        res.json({success: true, message: 'Course deleted successfully'})
+    }catch(error) {
+        res.json({success: false, message: error.message});
+    }
+})
+
 module.exports = routes;

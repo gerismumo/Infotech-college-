@@ -229,6 +229,71 @@ const controller = {
         } catch(error) {
             console.log(error.message);
         }
+    },
+    selectCourses: async () => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.selectCourses;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql, (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        } catch(error) {
+            console.log(error.message);
+        }
+    },
+    updateCourse: async (id, editForm) => {
+        try{
+            const connection = await createConnection();
+            const sql = queries.updateCourse;
+
+            const courseName = editForm.course_name;
+            const examiner = editForm.examiner;
+            const duration = editForm.duration;
+            const grade = editForm.grade;
+            const fees = editForm.fees;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql,[courseName, examiner, duration, grade, fees,id], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        resolve(result);
+                    }
+                });
+                 connection.end();
+            });
+
+        } catch(error) {
+            console.log(error);
+        }
+    },
+    deleteCourse: async (id) => {
+        try {
+            const connection = await createConnection();
+            const sql = queries.deleteCourse;
+
+            return new Promise((resolve, reject) => {
+                connection.query(sql, [id], (err, result) => {
+                    if(err) {
+                        reject(err);
+                    }else {
+                        console.log(result);
+                        resolve(result);
+                    }
+                });
+                connection.end();
+            });
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
