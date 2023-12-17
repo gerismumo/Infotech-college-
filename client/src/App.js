@@ -21,14 +21,14 @@ function App() {
         <Route path='/courses' element={<Courses />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/enroll' element={<Enroll />} />
-        <Route path='/studentPortal' element={<StudentPortal />} />
-        <Route path='/staffPortal' element={<StaffPortal />}>
+        {/* <Route path='/studentPortal' element={<StudentPortal />} /> */}
+        {/* <Route path='/staffPortal' element={<StaffPortal />}>
           <Route path='' element={<Student />} />
           <Route path='enrollmentList' element={<EnrollmentList />} />
           <Route path='coursesList' element={<CoursesList />} />
           <Route path='lecturer' element={<Lectures />} />
-        </Route>
-        <Route path='/login' element={<Login />} />
+        </Route> */}
+        {/* <Route path='/login' element={<Login />} /> */}
       </Routes>
     </Router>
   );

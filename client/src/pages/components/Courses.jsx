@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer';
 import Header from '../Header';
 
@@ -182,6 +183,7 @@ import Header from '../Header';
     }
   ]
 const Courses = () => {
+  const navigate = useNavigate();
 
     const courses = [
       {
@@ -286,6 +288,10 @@ const Courses = () => {
     }
   ]
 
+  const handleEnroll = () => {
+    navigate('/enroll');
+  }
+
   return (
     <>
     <Header />
@@ -312,7 +318,7 @@ const Courses = () => {
                       <td>{course.duration}</td>
                       <td>{course.entry}</td>
                       <td>{course.fees}</td>
-                      <td><button>Enroll</button></td>
+                      <td><button onClick={handleEnroll}>Enroll</button></td>
                     </tr>
                   ))}
                 </tbody>
@@ -332,11 +338,11 @@ const Courses = () => {
                                     <img src={course.image} alt="" />
                                 </div>
                                 <div className="view-course">
-                                  <div className="view-button">
+                                  {/* <div className="view-button">
                                     <button>View</button>
-                                  </div>
+                                  </div> */}
                                   <div className="enroll-button">
-                                    <button>Enroll</button>
+                                    <button onClick={handleEnroll}>Enroll</button>
                                   </div>
                                     
                                 </div>

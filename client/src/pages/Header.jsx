@@ -55,7 +55,7 @@ const Header = () => {
                             <Link to="/courses">Courses</Link>
                             <Link to="/contact">Contact</Link>
                         </div>
-                    <div className="portal-login" onMouseLeave={handleDropDownClose}>
+                    {/* <div className="portal-login" onMouseLeave={handleDropDownClose}>
                         <div className="portal-main-link" >
                             <Link  className='portal' to="" onMouseEnter={handleDropDown} >Portal Login</Link>
                         </div>
@@ -66,8 +66,8 @@ const Header = () => {
                                 <Link to='/login'>Staff Portal</Link>
                             </div>
                         )}
-                    </div>
-                    <div className="portal-login" onMouseLeave={handleDropDownAdminClose}>
+                    </div> */}
+                    {/* <div className="portal-login" onMouseLeave={handleDropDownAdminClose}>
                         <div className="portal-main-link" >
                             <Link  className='portal' to="" onMouseEnter={handleDropDownAdmin} >Admin List</Link>
                         </div>
@@ -79,7 +79,7 @@ const Header = () => {
                                 <Link to='lecturer'>Lecturer List</Link>
                             </div>
                         )}
-                    </div>
+                    </div> */}
                     </div>
                     <div className="apply-link">
                         <Link  className ='apply-now' to="/enroll">Apply Now</Link>
@@ -90,4 +90,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;
