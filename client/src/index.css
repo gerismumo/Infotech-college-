@@ -75,7 +75,7 @@ code {
   background-color: var(---white);
   box-shadow: 0px 2px 2px var(---lightGrey);
   position: fixed;
-  padding: 10px 0px;
+  padding: 10px 20px;
 }
 
 .header nav .logo {
@@ -169,45 +169,55 @@ code {
   border-bottom: 3px solid var(---lightGrey);
   margin: 0 auto;
 }
-.toggle {
-  display: none;
+@media  screen and (min-width: 800px) {
+  .toggle {
+    display: none;
+  }
 }
- .toggle-details {
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  position: absolute;
-  margin-top: 2px;
-  z-index: 1;
-  background-color: var(---darkBlack);
-  padding: 10px 30px;
-  margin-right: 70px;
-}
-.toggle-details .toggle-links {
+@media  screen and (max-width: 800px) {
+  .toggle {
+    position: relative;
+  }
+  
+  .toggle .toggle-details {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 10px;
+    z-index: 1;
+    background-color: var(---darkBlack);
+    padding: 10px 30px;
+    right: 0;
+    border-radius: 5px;
+  }
+  .toggle .toggle-details .toggle-links {
+  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .toggle .toggle-details .toggle-links a {
+    text-decoration: none;
+    color: var(---white);
+    font-size: 20px;
+    font-weight: 600;
+    padding: 4px 10px;
+    align-items: center;
+    border-radius: 5px;
+  }
+  .toggle .toggle-details .toggle-links a:hover {
+    background-color: var(---lightBlue);
+  }
+  .toggle .toggle-details .toggle-links .close-bar {
+    font-size: 30px;
+  }
+  .toggle .toggle-bar .close-bar {
+    color: red;
+  }
+} 
 
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-/*.toggle-details .toggle-links a {
-  text-decoration: none;
-  color: var(---white);
-  font-size: 20px;
-  font-weight: 600;
-  padding: 4px 10px;
-  align-items: center;
-  border-radius: 5px;
-}
-.toggle-details .toggle-links a:hover {
-  background-color: var(---lightBlue);
-} */
-.toggle-details .toggle-links .close-bar {
-  font-size: 30px;
-}
-.toggle .toggle-bar .close-bar {
-  color: red;
-}
 /* footer ccs */
 .footer {
   background-color: var(---darkBlack);
@@ -302,23 +312,43 @@ code {
 }
 
 /* home page */
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
 .home-content {
   margin-top: 190px;
   margin-bottom: 50px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.home-content .slide-details {
+  display: flex;
+  align-items: center;
+}
+.home-content .slide-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 .home-content .slide-container {
   padding: 1px;
+  width: 100%;
 }
 .home-content .slide {
   height: 400px;
-  position: relative;
+  /* position: relative; */
+  width: 100%;
 }
- 
+.home-content .slide  img{
+  height: 400px;
+  width: 100%;
+}
 .home-content .site-info {
   position: absolute;
-  top: 45%;
-  left: 25%;
-  transform: translate(-50%, -50%);
+  top: 30%;
+  left: 0;
   z-index: 1;
   text-align: center;
   width: 600px;
@@ -355,8 +385,6 @@ code {
 
 .about {
   margin-top: 50px;
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr); */
   display: flex;
   justify-content: center;
   gap: 60px;
@@ -411,7 +439,8 @@ code {
   display: flex;
   justify-content: center;
   background-color: var(---lightGrey);
-  padding: 40px 0;
+  padding: 40px 20px;
+  width: 100%;
 }
 
 .number-measures .number-dialog {
@@ -986,6 +1015,33 @@ code {
   }
   .header .other-link {
     display: none;
+  }
+
+  .footer .footer-details {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+  .footer .footer-details .address-details {
+    gap: 50px;
+  }
+
+  .about  {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about .vision-mission {
+    flex-direction: column;
+    gap: 20px
+  }
+  .about .about-more  {
+    padding: 10px 40px;
+    /* width: 180px; */
+  }
+  .number-measures .number-dialog h2 {
+    font-weight: 700;
+  }
+  .courses-info  {
+    flex-direction: column;
   }
 } 
 

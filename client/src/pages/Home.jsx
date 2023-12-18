@@ -100,12 +100,12 @@ const Home = () => {
     <Header />
     <div className="home-page">
         <div className="home-content">
-            <div className="slide-options">
+          <div className="slide-options">
                 <div className="slide-container">
                     <Fade duration={1000}>
                         {fadeImages.map((fadeImage, index) => (
                         <div key={index} className='slide'>
-                            <img style={{ width: '100%' }} src={fadeImage.url} />
+                            <img  src={fadeImage.url} />
                         </div>
                         ))}
                     </Fade>
@@ -115,7 +115,7 @@ const Home = () => {
                     <p>Welcome All</p>
                     <button>Apply Now</button>
                 </div>
-            </div>
+            </div> 
             <div className="about">
                 <div className="about-content">
                 <FontAwesomeIcon icon={faGraduationCap}  className='iconAbout'/>
