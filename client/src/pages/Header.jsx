@@ -1,9 +1,11 @@
 import { faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+    const[toggleOpen, setToggleOpen] = useState(false);
     const [openPortal, setOpenPortal] = useState(false);
     const [adminList, setAdminList] = useState(false);
 
@@ -31,6 +33,10 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
       }, []);
+
+      const handleToggle = () => {
+        setToggleOpen(!toggleOpen);
+      }
 
   return (
     <div className='header' onMouseLeave={handleDropDownClose}>
@@ -83,6 +89,22 @@ const Header = () => {
                     </div>
                     <div className="apply-link">
                         <Link  className ='apply-now' to="/enroll">Apply Now</Link>
+                    </div>
+                    <div className="toggle">
+                        <div className="toggle-bar"  >
+                            {toggleOpen ? 
+                            (<FontAwesomeIcon icon={faXmark}  onClick={handleToggle} className='close-bar' size='2x'/>) : 
+                            (<FontAwesomeIcon icon={faBars} onClick={handleToggle} className='open-bar' size='2x' /> )}
+                        </div>
+                        {toggleOpen && (
+                            <div className="toggle-details">
+                                <div className="toggle-links">
+                                    <Link to="/">Home</Link>
+                                    <Link to="/courses">Courses</Link>
+                                    <Link to="/contact">Contact</Link>
+                                </div>  
+                            </div>
+                        )}
                     </div>
                 </div>
             </nav>

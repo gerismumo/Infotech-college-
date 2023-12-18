@@ -169,6 +169,45 @@ code {
   border-bottom: 3px solid var(---lightGrey);
   margin: 0 auto;
 }
+.toggle {
+  display: none;
+}
+ .toggle-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  position: absolute;
+  margin-top: 2px;
+  z-index: 1;
+  background-color: var(---darkBlack);
+  padding: 10px 30px;
+  margin-right: 70px;
+}
+.toggle-details .toggle-links {
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+/*.toggle-details .toggle-links a {
+  text-decoration: none;
+  color: var(---white);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 4px 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+.toggle-details .toggle-links a:hover {
+  background-color: var(---lightBlue);
+} */
+.toggle-details .toggle-links .close-bar {
+  font-size: 30px;
+}
+.toggle .toggle-bar .close-bar {
+  color: red;
+}
 /* footer ccs */
 .footer {
   background-color: var(---darkBlack);
@@ -940,7 +979,15 @@ code {
   font-weight: 800;
 }
 
-
+@media screen and (max-width: 800px) {
+  .header nav .logo img {
+    height: 100px;
+    width: 110px;
+  }
+  .header .other-link {
+    display: none;
+  }
+} 
 
 /* login page css */
 .login-page {
