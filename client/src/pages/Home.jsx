@@ -106,7 +106,6 @@ const Home = () => {
                         {fadeImages.map((fadeImage, index) => (
                         <div key={index} className='slide'>
                             <img style={{ width: '100%' }} src={fadeImage.url} />
-                            <h2>{fadeImage.caption}</h2>
                         </div>
                         ))}
                     </Fade>
