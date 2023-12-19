@@ -253,41 +253,41 @@ code {
   padding: 20 0px;
 }
 .footer .footer-details {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 40px;
   align-items: center;
-  margin-right: 70px;
-  margin-left: 70px;
   padding-bottom: 30px;
 }
 .footer .footer-details .address-details {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 150px;
 }
 .footer .footer-details .address-details .address {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.footer .footer-details .address-details .address h2 {
-  font-size: 22px;
+.footer .footer-details .address .footer-logo{
+  margin-top: 10px;
+}
+.footer .footer-details .address .footer-logo img {
+  width: 80px;
+  height: 80px;
 }
 .footer .footer-details .address-details .address p{
   font-weight: 700;
 }
-.footer .footer-details .address-details .social-icons {
+.footer .footer-details  .social-icons {
+  margin-top: 30px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 20px;
 }
-.footer .footer-details .address-details .social-icons .iconFooter {
+.footer .footer-details  .social-icons .iconFooter {
   color: var(---blue);
   font-size: 25px;
 }
-.footer .footer-details .address-details .social-icons .iconFooter:hover {
+.footer .footer-details  .social-icons .iconFooter:hover {
   color: var(---lightBlue);
 }
 .footer .footer-details .links-details {
@@ -1062,11 +1062,13 @@ code {
 @media screen and (max-width: 800px) {
   
   .footer .footer-details {
-    flex-direction: column-reverse;
-    gap: 40px;
+    padding: 0 10px;
   }
   .footer .footer-details .address-details {
     gap: 50px;
+  }
+  .footer .footer-details  .social-icons{
+    margin-bottom: 20px;
   }
   .home-content {
     margin-top: 140px;
