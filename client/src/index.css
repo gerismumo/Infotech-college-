@@ -367,7 +367,6 @@ code {
 }
 .home-content .slide {
   height: 400px;
-  /* position: relative; */
   width: 100%;
 }
 .home-content .slide  img{
@@ -381,15 +380,23 @@ code {
   z-index: 1;
   text-align: center;
   color: black;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  /* background-color: var(---hoverGrey); */
+  flex-wrap:nowrap;
+  margin:  10px;
 }
 
-.home-content .site-info h1 {
+.home-content .site-info .site-name  {
+  display: flex;
   font-family: 'Signika', sans-serif;
   margin-bottom: 0;
+  font-size: 20px;
+  color: var(---white);
+  font-weight: 900;
+  flex-wrap: wrap;
 }
 .home-content .site-info p {
   font-size: 25px;
@@ -404,7 +411,7 @@ code {
   border-radius: 50px;
   font-size: 18px;
   font-weight: 900;
-  border: 2px solid var(---darkBlack);
+  border: 3px solid var(---darkBlack);
   color: var(---white);
   width: 180px;
   margin-left: 80px;
@@ -602,7 +609,9 @@ code {
   flex-direction: row;
   align-items: center;
 }
-
+.more-courses p:hover {
+  background-color: var(---lightBlue);
+}
 .more-courses p:hover{
   background-color: var(---lightBlue);
 }
@@ -1065,12 +1074,10 @@ code {
   .home-content .site-info {
     width: 400px;
   }
-  .home-content .site-info h1 {
-    font-size: 20px;
-  }
-  .home-content .site-info p {
-    font-size: 18px;
-   
+  
+  .home-content .site-info .site-name {
+    font-size: 16px;
+    padding-right: 40px;
   }
   .home-content .site-info button  {
     padding: 10px 7px;
@@ -1083,11 +1090,22 @@ code {
   }
   .about .vision-mission {
     flex-direction: column;
-    gap: 20px
+    gap: 20px;
+    /* padding: 0 20px; */
   }
   .about .about-more  {
     padding: 10px 40px;
-    /* width: 180px; */
+    width: 250px;
+  }
+  .courses-name{
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  .courses-name span{
+    width: 80px;
+  }
+  .courses-name p{
+    font-size: 20px;
   }
   /* .number-measures .number-dialog h2 {
     font-weight: 700;
@@ -1098,9 +1116,15 @@ code {
 
   .course-card .course-image img{
     height: 280px;
-    width: 350px;
+    width: 330px;
   }
-
+  .more-courses{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .more-courses p{
+    padding: 5px 10px;
+  }
   /* courses page */
  .courses-page-content {
     margin-top: 140px;

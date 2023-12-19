@@ -2,12 +2,18 @@ import { faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+    const navigate = useNavigate();
+
     const[toggleOpen, setToggleOpen] = useState(false);
     const [openPortal, setOpenPortal] = useState(false);
     const [adminList, setAdminList] = useState(false);
+
+    const handleBackHome = () => {
+        navigate('/');
+    }
 
     const handleDropDown = () => {
         setOpenPortal(true);
@@ -31,7 +37,7 @@ const Header = () => {
 
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            
+
             if(currentScrollY > prevScrollY) {
                 setToggleOpen(false);
             }
@@ -65,7 +71,7 @@ const Header = () => {
             </div>
         </div>
             <nav className={`${isHeaderVisible ? 'header--visible': 'header--hidden'}`}>
-                <div className="logo">
+                <div className="logo" onClick={handleBackHome}>
                     <img src='../../images/infotectlogo.jpg' alt='logo' />
                 </div>
                 <div className="links" >
