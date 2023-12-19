@@ -87,25 +87,28 @@ const Header = () => {
                         )}
                     </div> */}
                     </div>
-                    <div className="apply-link">
-                        <Link  className ='apply-now' to="/enroll">Apply Now</Link>
-                    </div>
-                    <div className="toggle">
-                        <div className="toggle-bar"  >
-                            {toggleOpen ? 
-                            (<FontAwesomeIcon icon={faXmark}  onClick={handleToggle} className='close-bar' size='2x'/>) : 
-                            (<FontAwesomeIcon icon={faBars} onClick={handleToggle} className='open-bar' size='2x' /> )}
+                    <div className="small-screen">
+                        <div className="apply-link">
+                            <Link  className ='apply-now' to="/enroll">Apply Now</Link>
                         </div>
-                        {toggleOpen && (
-                            <div className="toggle-details">
-                                <div className="toggle-links">
-                                    <Link to="/">Home</Link>
-                                    <Link to="/courses">Courses</Link>
-                                    <Link to="/contact">Contact</Link>
-                                </div>  
+                        <div className="toggle">
+                            <div className="toggle-bar"  >
+                                {toggleOpen ? 
+                                (<FontAwesomeIcon icon={faXmark}  onClick={handleToggle} className='close-bar' size='2x'/>) : 
+                                (<FontAwesomeIcon icon={faBars} onClick={handleToggle} className='open-bar' size='2x' /> )}
                             </div>
-                        )}
+                            {toggleOpen && (
+                                <div className="toggle-details">
+                                    <div className="toggle-links">
+                                        <Link to="/">Home</Link>
+                                        <Link to="/courses">Courses</Link>
+                                        <Link to="/contact">Contact</Link>
+                                    </div>  
+                                </div>
+                            )}
+                        </div>
                     </div>
+                    
                 </div>
             </nav>
         </div>
