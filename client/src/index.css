@@ -246,11 +246,11 @@ code {
 
 /* footer ccs */
 .footer {
+  display: flex;
+  flex-direction: column;
   background-color: var(---darkBlack);
   color: var(---white);
   padding: 20 0px;
-  /* text-align: center; */
-  
 }
 .footer .footer-details {
   display: flex;
@@ -326,6 +326,9 @@ code {
   font-weight: 600;
 }
 .footer .bottom-links .developer-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   font-size: 16px;
   font-weight: 500;
 }
@@ -618,11 +621,16 @@ code {
 .courses-page {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 .courses-page-content {
-  margin-top: 190px;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 190px; */
   margin-bottom: 120px;
 }
+
 .courses-page .courses-title {
   display: flex;
   justify-content: center;
@@ -633,21 +641,20 @@ code {
 }
 
 .courses-table {
-  margin-top: 70px ;
   display: flex;
- justify-content: center;
+  justify-content: center;
+  margin-top: 70px;
 }
 .courses-table-details {
   display: flex;
-  justify-content: center;
-  width: 80%;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .courses-table-details table {
-  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-collapse: collapse;
 }
 
@@ -1100,6 +1107,110 @@ code {
     height: 280px;
     width: 350px;
   }
+
+  /* courses page */
+ .courses-page-content {
+    margin-top: 140px;
+  } 
+  
+  .courses-page .courses-title{
+    font-size: 18px;
+  }
+  .courses-table{
+    margin-top: 40px;
+  }
+  .courses-table-details table{
+    width: 80%;
+  }
+  .courses-page .other-title span{
+    width: 80px;
+  }
+  .courses-page .other-title p{
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .courses-page .courses-info{
+    justify-content: center;
+  }
+  
+  /* contact page */
+  .contact-page .contact-page-details{
+    margin-top: 140px;
+  }
+  .contact-page .contact-title{
+    font-size: 18px;
+  }
+  .contact-page .contact-form-title span{
+    width: 80px;
+  }
+  .contact-page .contact-form-title{
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .contact-page .contact-detail{
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contact-page .contact-image img {
+    width: 400px;
+    height: 300px;
+  }
+  .contact-page form{
+    align-items: center;
+  }
+  .contact-page form .name-email{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-page form input{
+    width: 300px;
+  }
+  .contact-page form textarea{
+    height: 5vh;
+  }
+
+
+  /* enroll-page */
+.enroll-page .enroll-content{
+  margin-top: 140px;
+}
+.enroll-page .enroll-title{
+  font-size: 18px;
+}
+.enroll-page .enroll-details {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.enroll-page .enroll-form-text{
+  margin-left: 10px;
+}
+.enroll-page .enroll-form-text span{
+  width: 80px;
+}
+
+.enroll-form form .form-parts{
+  flex-direction: column;
+  gap: 20px;
+}
+.enroll-form form input , select{
+  height: 4vh;
+}
+.enroll-form form  .gender input{
+  height: 15px;
+  width: 15px;
+}
+.enroll-form  .button {
+  margin-top: 20px;
+}
+.enroll-form  .button button {
+  padding: 6px 50px;
+}
+.enroll-page .inst-quote{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 } 
 
 /* login page css */

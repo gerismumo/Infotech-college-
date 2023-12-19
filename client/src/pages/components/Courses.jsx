@@ -300,31 +300,32 @@ const Courses = () => {
           <div className="courses-title">
             <h1>Courses</h1>
           </div>
-          <div className="courses-table">
-            <div className="courses-table-details">
-              <table>
-                <thead>
-                  <th>COURSE</th>
-                  <th>EXAMINER</th>
-                  <th>DURATION</th>
-                  <th>MIN ENTRY</th>
-                  <th>FEES</th>
-                </thead>
-                <tbody>
-                  {coursesDetails.map((course) => (
-                    <tr key={course.id}>
-                      <td>{course.name}</td>
-                      <td>{course.examiner}</td>
-                      <td>{course.duration}</td>
-                      <td>{course.entry}</td>
-                      <td>{course.fees}</td>
-                      <td><button onClick={handleEnroll}>Enroll</button></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div> 
-          </div>
+            <div className="courses-table">
+              <div className="courses-table-details">
+                <table>
+                  <thead>
+                    <th>COURSE</th>
+                    <th>EXAMINER</th>
+                    <th>DURATION</th>
+                    <th>MIN ENTRY</th>
+                    <th>FEES</th>
+                  </thead>
+                  <tbody>
+                    {coursesDetails.map((course) => (
+                      <tr key={course.id}>
+                        <td>{course.name}</td>
+                        <td>{course.examiner}</td>
+                        <td>{course.duration}</td>
+                        <td>{course.entry}</td>
+                        <td>{course.fees}</td>
+                        <td><button onClick={handleEnroll}>Enroll</button></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div> 
+            </div>
+          
           <div className="other-title">
             <span></span>
             <p>Other Courses</p>
@@ -355,9 +356,9 @@ const Courses = () => {
                     </div>
                 </div>
           </div>
-          <div className="inst-quote">
+          {/* <div className="inst-quote">
             <p>College of choice for developing professionals</p>
-          </div>
+          </div> */}
         </div>
       </div>
       
