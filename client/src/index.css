@@ -50,7 +50,7 @@ code {
   justify-content: center;
   align-items: center;
   background-color: var(---lightGrey);
-  width: 100%;
+  /* width: 100%; */
 }
 .header .social-links .social {
  align-self: flex-end;
@@ -72,7 +72,7 @@ code {
   justify-content: space-between;
   background-color: var(---white);
   box-shadow: 0px 2px 2px var(---lightGrey);
-  padding: 10px 20px;
+  padding: 5px 10px;
 }
 
 .header nav .logo {
@@ -84,7 +84,6 @@ code {
 }
 
 .header nav .links {
-  margin-right: 90px;
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -180,23 +179,17 @@ code {
   .header .social-links{
     justify-content: center;
   }
-  .header nav {
-    padding: 5px;
-    align-items: center;
-    flex-direction: row;
-  }
+  
   .header nav .logo img {
     height: 80px;
     width: 90px;
   }
-  .header nav .links  {
+  /* .header nav .links  {
     margin-right: 0;
-    padding-right: 10px;
-  }
-  .header nav .links{
-    display: flex;
-    align-items: center;
-  }
+  } */
+  /* .header nav .links {
+    margin-right: 10px;
+  } */
   .header .apply-now {
     padding: 6px 10px;
     font-size: 16px;
@@ -350,7 +343,7 @@ code {
   flex-direction: column;
 }
 .home-content {
-  margin-top: 138px;
+  margin-top: 180px;
   margin-bottom: 50px;
   margin-left: 0;
   margin-right: 0;
@@ -419,12 +412,28 @@ code {
 .about {
   margin-top: 50px;
   display: flex;
-  justify-content: center;
-  gap: 60px;
+  /* justify-content: center; */
+  gap: 30px;
   padding: 20px ;
   margin-left: 40px;
   margin-right: 40px;
   align-items: center;
+}
+.about .about-content-details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.about .welcome-info {
+  background-color: var(---lightBlue);
+  padding: 20px 20px;
+}
+.about .welcome-info:hover {
+  background-color: var(---blue);
+}
+.about .welcome-info .iconHome {
+  color: var(---white);
+  font-weight: 900;
 }
 .about .about-content {
   background-color: var(---lightBlue);
@@ -439,10 +448,12 @@ code {
 }
 .about .vision-mission {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
 }
 .about .about-content,
+.about .welcome-info,
 .about .vision,
 .about .mission {
   display: flex;
@@ -473,7 +484,6 @@ code {
   justify-content: space-around;
   background-color: var(---lightGrey);
   padding: 40px 20px;
-  width: 100%;
 }
 
 /* .number-measures .number-dialog {
@@ -533,7 +543,7 @@ code {
   align-items: center;
   padding: 10px 10px;
   border-radius: 5px;
-  width: 400px;
+  width: auto;
   height: 400px;
 }
 
@@ -1049,7 +1059,9 @@ code {
   .footer .footer-details .address-details {
     gap: 50px;
   }
-
+  .home-content {
+    margin-top: 140px;
+  }
   .home-content .site-info {
     width: 400px;
   }
@@ -1081,6 +1093,11 @@ code {
   } */
   .courses-info  {
     flex-direction: column;
+  }
+
+  .course-card .course-image img{
+    height: 280px;
+    width: 350px;
   }
 } 
 

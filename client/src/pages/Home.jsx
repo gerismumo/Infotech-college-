@@ -1,4 +1,4 @@
-import { faArrowRight, faBook, faBullseye, faGraduationCap, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faBook, faBullseye, faGraduationCap, faHouse, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
@@ -118,13 +118,24 @@ const Home = () => {
                 
             </div> 
             <div className="about">
-                <div className="about-content">
-                <FontAwesomeIcon icon={faGraduationCap}  className='iconAbout'/>
-                    <h2>What we Do</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam temporibus culpa ea minus quasi quia beatae! Saepe doloremque inventore sequi ad recusandae explicabo, quas consectetur eligendi molestias nulla ipsam.
-                     nesciunt?
-                   </p>
+              <div className="about-content-details">
+                <div className="welcome-info">
+                    <FontAwesomeIcon icon={faHouse} className='iconHome' size='2x'/>
+                    <h2>WELCOME TO OUR COLLEGE</h2>
+                    <p>In 2018 INSTITUTE OF PROFESSIONAL STUDIES College
+                      was established.
+                      The College has several  well-established 
+                      Schools  namely; School of Business, School of Humanilities, School of computing
+                    </p>
                 </div>
+                <div className="about-content">
+                  <FontAwesomeIcon icon={faGraduationCap}  className='iconAbout'/>
+                      <h2>What we Do</h2>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam temporibus culpa ea minus quasi quia beatae! Saepe doloremque inventore sequi ad recusandae explicabo, quas consectetur eligendi molestias nulla ipsam.
+                      nesciunt?
+                    </p>
+                  </div>
+              </div>
                 <div className="vision-mission">
                     <div className="vision about-more" >
                     <FontAwesomeIcon icon={faBook} className='iconAbout' />
