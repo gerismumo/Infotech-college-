@@ -108,7 +108,7 @@ const Home = () => {
                             <img  src={fadeImage.url} />
                             <div className="site-info">
                               <h1>{displayText}</h1>
-                              <p>Welcome All</p>
+                              {/* <p>Welcome All</p> */}
                               <button>Apply Now</button>
                           </div>
                         </div>

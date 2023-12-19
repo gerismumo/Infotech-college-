@@ -377,11 +377,11 @@ code {
   left: 0;
   z-index: 1;
   text-align: center;
-  /* width: 600px; */
   color: black;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .home-content .site-info h1 {
@@ -396,12 +396,13 @@ code {
 }
 .home-content .site-info button {
   padding: 15px 25px;
-  background-color: var(---blue);
+  background-color: transparent;
   border: none;
   border-radius: 50px;
   font-size: 18px;
   font-weight: 900;
-  color: #ffffff;
+  border: 2px solid var(---darkBlack);
+  color: var(---white);
   width: 180px;
   margin-left: 80px;
 }
@@ -412,11 +413,8 @@ code {
 .about {
   margin-top: 50px;
   display: flex;
-  /* justify-content: center; */
   gap: 30px;
-  padding: 20px ;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding: 10px 40px;
   align-items: center;
 }
 .about .about-content-details {
@@ -427,6 +425,7 @@ code {
 .about .welcome-info {
   background-color: var(---lightBlue);
   padding: 20px 20px;
+  text-align: center;
 }
 .about .welcome-info:hover {
   background-color: var(---blue);
@@ -436,14 +435,15 @@ code {
   font-weight: 900;
 }
 .about .about-content {
-  background-color: var(---lightBlue);
+  border: 1px solid var(---lightBlue);
   padding: 20px 20px;
+  text-align: center;
 }
-.about .about-content:hover {
+/* .about .about-content:hover {
   background-color: var(---blue);
-}
+} */
 .about .about-content .iconAbout {
-  color: var(---white);
+  color: var(---blue);
   font-weight: 900;
 }
 .about .vision-mission {
@@ -1079,6 +1079,7 @@ code {
   .about  {
     flex-direction: column;
     align-items: center;
+    padding: 5px 10px;
   }
   .about .vision-mission {
     flex-direction: column;
