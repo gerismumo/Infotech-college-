@@ -106,15 +106,16 @@ const Home = () => {
                         {fadeImages.map((fadeImage, index) => (
                         <div key={index} className='slide'>
                             <img  src={fadeImage.url} />
+                            <div className="site-info">
+                              <h1>{displayText}</h1>
+                              <p>Welcome All</p>
+                              <button>Apply Now</button>
+                          </div>
                         </div>
                         ))}
                     </Fade>
                 </div>
-                <div className="site-info">
-                    <h1>{displayText}</h1>
-                    <p>Welcome All</p>
-                    <button>Apply Now</button>
-                </div>
+                
             </div> 
             <div className="about">
                 <div className="about-content">
@@ -143,7 +144,6 @@ const Home = () => {
                 </div>
             </div>
             <div className="number-measures">
-                <div className="number-dialog">
                     <VisibilitySensor onChange={onVisibilityChange} partialVisibility offset={{ bottom: 200 }}>
                         <div className="students">
                         <h2>{isVisible ? <CountUp end={500} duration={2} separator="," /> : '0'}</h2>
@@ -163,7 +163,7 @@ const Home = () => {
                         </div>
                     </VisibilitySensor>
                     
-                </div>
+                
             </div>
             <div className="courses-name">
                 <span></span>

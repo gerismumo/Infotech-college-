@@ -347,11 +347,11 @@ code {
 }
 .home-content .site-info {
   position: absolute;
-  top: 30%;
+  top: 0;
   left: 0;
   z-index: 1;
   text-align: center;
-  width: 600px;
+  /* width: 600px; */
   color: black;
   padding: 20px;
   display: flex;
@@ -437,17 +437,16 @@ code {
 .number-measures {
   margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   background-color: var(---lightGrey);
   padding: 40px 20px;
   width: 100%;
 }
 
-.number-measures .number-dialog {
+/* .number-measures .number-dialog {
   display: flex;
-  flex-direction: row;
-  gap: 250px;
-}
+  justify-content: space-between;
+} */
 .number-measures .students,
 .number-measures .tutors,
 .number-measures .courses {
@@ -455,13 +454,13 @@ code {
   flex-direction: column;
   align-items: center;
 }
-.number-measures .number-dialog h2 {
+.number-measures  h2 {
   margin-bottom: 0;
   color: var(---blue);
   font-weight: 900;
   font-size: 35px;
 }
-.number-measures .number-dialog  p {
+.number-measures   p {
   font-weight: 600;
   color: var(---lightBlack);
 }
@@ -1025,6 +1024,20 @@ code {
     gap: 50px;
   }
 
+  .home-content .site-info {
+    width: 400px;
+  }
+  .home-content .site-info h1 {
+    font-size: 20px;
+  }
+  .home-content .site-info p {
+    font-size: 18px;
+   
+  }
+  .home-content .site-info button  {
+    padding: 10px 7px;
+    width: 130px;
+  }
   .about  {
     flex-direction: column;
     align-items: center;
@@ -1037,9 +1050,9 @@ code {
     padding: 10px 40px;
     /* width: 180px; */
   }
-  .number-measures .number-dialog h2 {
+  /* .number-measures .number-dialog h2 {
     font-weight: 700;
-  }
+  } */
   .courses-info  {
     flex-direction: column;
   }
