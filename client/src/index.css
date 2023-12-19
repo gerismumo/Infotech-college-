@@ -378,7 +378,7 @@ code {
   z-index: 1;
   text-align: center;
   color: black;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;

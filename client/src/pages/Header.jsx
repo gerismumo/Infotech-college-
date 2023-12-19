@@ -35,7 +35,10 @@ const Header = () => {
       }, []);
 
       const handleToggle = () => {
-        setToggleOpen(!toggleOpen);
+        setTimeout(() => {
+            setToggleOpen(!toggleOpen);
+        }, 100)
+       
       }
 
   return (
