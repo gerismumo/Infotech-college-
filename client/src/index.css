@@ -621,13 +621,9 @@ code {
 .courses-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
 }
 .courses-page-content {
-  display: flex;
-  flex-direction: column;
-  /* margin-top: 190px; */
+  margin-top: 180px;
   margin-bottom: 120px;
 }
 
@@ -641,15 +637,12 @@ code {
 }
 
 .courses-table {
-  display: flex;
-  justify-content: center;
   margin-top: 70px;
 }
 .courses-table-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-top: 20px;
+  padding: 10px;
+  overflow: auto;
 }
 
 .courses-table-details table {
@@ -1119,8 +1112,14 @@ code {
   .courses-table{
     margin-top: 40px;
   }
+  /* .courses-table-details {
+    width: 400px;
+  } */
   .courses-table-details table{
-    width: 80%;
+    width: 70%;
+  }
+  .courses-page .other-title{
+    margin-left: 10px;
   }
   .courses-page .other-title span{
     width: 80px;
@@ -1132,7 +1131,9 @@ code {
   .courses-page .courses-info{
     justify-content: center;
   }
-  
+  .courses-page .courses-data{
+    padding: 5px;
+  }
   /* contact page */
   .contact-page .contact-page-details{
     margin-top: 140px;

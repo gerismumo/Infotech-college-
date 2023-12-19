@@ -339,9 +339,6 @@ const Courses = () => {
                                     <img src={course.image} alt="" />
                                 </div>
                                 <div className="view-course">
-                                  {/* <div className="view-button">
-                                    <button>View</button>
-                                  </div> */}
                                   <div className="enroll-button">
                                     <button onClick={handleEnroll}>Enroll</button>
                                   </div>
@@ -356,9 +353,6 @@ const Courses = () => {
                     </div>
                 </div>
           </div>
-          {/* <div className="inst-quote">
-            <p>College of choice for developing professionals</p>
-          </div> */}
         </div>
       </div>
       
