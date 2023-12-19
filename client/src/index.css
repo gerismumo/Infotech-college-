@@ -409,9 +409,9 @@ code {
   width: 180px;
   margin-left: 80px;
 }
-.home-content .site-info button:hover {
+/* .home-content .site-info button:hover {
   background-color: var(---lightBlue);
-}
+} */
 
 .about {
   margin-top: 50px;
@@ -495,7 +495,7 @@ code {
 } */
 .number-measures .students,
 .number-measures .tutors,
-.number-measures .courses {
+.number-measures .courses {                                                                                                   
   display: flex;
   flex-direction: column;
   align-items: center;

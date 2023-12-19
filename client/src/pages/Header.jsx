@@ -27,12 +27,24 @@ const Header = () => {
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
     useEffect(() => {
+        let prevScrollY = window.scrollY;
+
         const handleScroll = () => {
-          setIsHeaderVisible(window.scrollY < 50); 
+            const currentScrollY = window.scrollY;
+            
+            if(currentScrollY > prevScrollY) {
+                setToggleOpen(false);
+            }
+            setIsHeaderVisible(currentScrollY <= prevScrollY || currentScrollY < 50);
+            prevScrollY = currentScrollY;
         };
+
         window.addEventListener('scroll', handleScroll);
+        
+
         return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
+    }, []);
+
 
       const handleToggle = () => {
         setTimeout(() => {
