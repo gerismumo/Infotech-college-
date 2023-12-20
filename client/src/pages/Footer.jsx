@@ -40,7 +40,7 @@ const Footer = () => {
                 <p>&copy; 2023 info Tech. All rights reserved.</p>
             </div>
             <div className="developer-details">
-               <p>Designed by <span>Gerald</span> & <span>Winnie</span></p> 
+               <p>Designed by <span>Winnie</span></p> 
             </div>
         </div>
         
