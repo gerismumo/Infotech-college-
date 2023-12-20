@@ -480,7 +480,7 @@ code {
   background-color: var(---blue);
 } */
 .about .about-content .iconAbout {
-  color: var(---lightBlue);
+  color: var(---accentColor);
   font-weight: 900;
 }
 .about .vision-mission {
@@ -499,7 +499,7 @@ code {
 }
 .iconAbout {
   font-size: 35px;
-  color: var(---lightBlue);
+  color: var(---accentColor);
 }
 .about h2 {
   font-size: 25px;
@@ -536,7 +536,7 @@ code {
 }
 .number-measures  h2 {
   margin-bottom: 0;
-  color: var(---blue);
+  color: var(---lightPrimary);
   font-weight: 900;
   font-size: 35px;
 }
@@ -674,6 +674,7 @@ code {
 
 .courses-table {
   margin-top: 70px;
+  
 }
 .courses-table-details {
   display: flex;
@@ -1139,6 +1140,9 @@ code {
   .courses-name p{
     font-size: 20px;
   }
+  .number-measures  h2{
+    font-size: 28px;
+  }
   /* .number-measures .number-dialog h2 {
     font-weight: 700;
   } */
@@ -1168,9 +1172,9 @@ code {
   .courses-table{
     margin-top: 40px;
   }
-  /* .courses-table-details {
-    width: 400px;
-  } */
+  .courses-table-details {
+    display: block;
+  }
   .courses-table-details table{
     width: 70%;
   }
