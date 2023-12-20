@@ -970,10 +970,10 @@ code {
 .enroll-page .enroll-title {
   display: flex;
   justify-content: center;
-  background-color: var(---lightBlue);
+  background-color: var(---whiteSmoke);
   font-size: 25px;
   font-weight: 900;
-  color: var(---white);
+  color: var(---primaryColor);
 }
 .enroll-page .enroll-details {
   margin-top: 50px;
@@ -993,7 +993,7 @@ code {
   border-bottom: 2px solid var(---grey);
 }
 .enroll-page .enroll-form-text p{
-  color: var(---blue);
+  color: var(---primaryColor);
   font-size: 20px;
   font-weight: 800;
 }
@@ -1019,7 +1019,7 @@ code {
 
 .enroll-form form input , 
 .enroll-form form  select {
-  border: 1px solid var(---blue);
+  border: 1px solid var(---lightPrimary);
   height: 6vh;
   width: 350px;
   outline: none;
@@ -1063,7 +1063,7 @@ code {
   align-items: center;
 }
 .enroll-form  .button button {
-  background-color: var(---blue);
+  background-color: var(---primaryColor);
   border:none ;
   padding: 8px 80px;
   font-size: 22px;
@@ -1074,7 +1074,7 @@ code {
   font-size: 30px;
 }
 .enroll-form  .button button:hover{
-  background-color: var(---lightBlue);
+  background-color: var(---lightPrimary);
 }
 .enroll-page .inst-quote {
   margin-top: 150px;
