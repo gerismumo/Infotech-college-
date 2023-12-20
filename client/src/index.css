@@ -47,24 +47,17 @@ code {
 .header .social-links {
   padding: 10px 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: var(---lightGrey);
-  /* width: 100%; */
+  justify-content: space-between;
 }
-.header .social-links .social {
- align-self: flex-end;
- justify-content: center;
- gap: 30px;
- margin-right: 30px;
- font-size: 20px;
- color: var(---darkBlue);
-}
-.header .social-links .social .links {
+
+.header .social-links  .links {
+  align-self: flex-end;
   display: flex;
-  justify-content: center;
   gap: 20px;
-  align-items: center;
+  font-size: 20px;
+  color: var(---darkBlue);
+  margin-right: 30px;
 }
 .header nav {
   display: flex;
@@ -177,9 +170,11 @@ code {
 }
 @media  screen and (max-width: 800px) {
   .header .social-links{
-    justify-content: center;
+    justify-content:flex-end;
   }
-  
+  .header .social-links  .links {
+    margin-right: 20px;
+  }
   .header nav .logo img {
     height: 80px;
     width: 90px;
@@ -976,7 +971,6 @@ code {
   display: flex;
   justify-content: center;
   gap: 150px;
-  /* align-items: center; */
 }
 .enroll-form form .form-parts  .form-part1{
   display: flex;
@@ -987,7 +981,8 @@ code {
   flex-direction: column;
 }
 
-.enroll-form form input , select {
+.enroll-form form input , 
+.enroll-form form  select {
   border: 1px solid var(---blue);
   height: 6vh;
   width: 350px;
@@ -1178,15 +1173,14 @@ code {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    padding: 10px;
   }
 
   .contact-page .contact-image img {
-    width: 400px;
+    width: 350px;
     height: 300px;
   }
-  .contact-page form{
-    align-items: center;
-  }
+  
   .contact-page form .name-email{
     flex-direction: column;
     gap: 10px;
@@ -1196,6 +1190,7 @@ code {
   }
   .contact-page form textarea{
     height: 5vh;
+    width: 300px;
   }
 
 
@@ -1220,9 +1215,13 @@ code {
 .enroll-form form .form-parts{
   flex-direction: column;
   gap: 20px;
+  padding: 10px;
+  align-items: center;
 }
-.enroll-form form input , select{
-  height: 4vh;
+.enroll-form form input ,
+.enroll-form form select{
+  height: 5.5vh;
+  width: 270px;
 }
 .enroll-form form  .gender input{
   height: 15px;

@@ -56,19 +56,19 @@ const Header = () => {
         setTimeout(() => {
             setToggleOpen(!toggleOpen);
         }, 100)
-       
       }
 
   return (
     <div className='header' onMouseLeave={handleDropDownClose}>
         <div className="social-links">
-            <div className="social">
+            <div className="lin">
+
+            </div>
                 <div className="links">
                     <FontAwesomeIcon icon={faTwitter} />
                     <FontAwesomeIcon icon={faFacebook} />
                     <FontAwesomeIcon icon={faWhatsapp} />
                 </div> 
-            </div>
         </div>
             <nav className={`${isHeaderVisible ? 'header--visible': 'header--hidden'}`}>
                 <div className="logo" onClick={handleBackHome}>
