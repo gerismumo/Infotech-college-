@@ -290,6 +290,7 @@ const Courses = () => {
 
   const handleEnroll = () => {
     navigate('/enroll');
+    window.scroll(0, 0);
   }
 
   return (

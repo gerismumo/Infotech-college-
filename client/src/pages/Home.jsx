@@ -94,6 +94,7 @@ const Home = () => {
 
     const MoveToCourses = () => {
       navigate('/courses');
+      window.scroll(0,0);
     }
 
     const AboutText = `Welcome to Infotech Institute of professional studied, a place where persons from any station in life can realize their fullest potential!
@@ -112,6 +113,7 @@ const Home = () => {
 
     const handleAbout = () => {
       navigate('/about');
+      window.scroll(0,0);
     }
 
   return (
@@ -215,7 +217,7 @@ const Home = () => {
                                 <img src={course.image} alt="" />
                             </div>
                             <div className="view-course">
-                                <button>View</button>
+                                <button onClick={MoveToCourses}>View</button>
                             </div>
                             <div className="course-name">
                                 <p>{course.name}</p>
