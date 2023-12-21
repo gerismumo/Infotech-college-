@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
         <div className="bottom-links">
             <div className="copy-right">
-                <p>&copy; 2023 info Tech. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear} info Tech. All rights reserved.</p>
             </div>
             <div className="developer-details">
                <p>Designed by <span>Winnie</span></p> 

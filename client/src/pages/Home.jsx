@@ -144,7 +144,7 @@ const Home = () => {
                 <div className="welcome-info">
                     <FontAwesomeIcon icon={faHouse} className='iconHome' size='2x'/>
                     <h2>WELCOME TO OUR COLLEGE</h2>
-                    <p>In 2018 <span>INFOTECH INSTITUTE OF PROFESSIONAL STUDIES College</span>  
+                    <p>In 2014 <span>INFOTECH INSTITUTE OF PROFESSIONAL STUDIES College</span>  
                          was established.
                       The College has several  well-established 
                       Schools  namely; School of Business, School of Humanilities, School of computing
