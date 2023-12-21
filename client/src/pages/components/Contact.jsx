@@ -18,7 +18,7 @@ const Contact = () => {
           </div>
           <div className="contact-detail">
             <div className="contact-image">
-              <img src="../../images/secretarial.jpg" alt="" />
+              <img src="../../images/pexels-chepté-cormani-1416530.jpg" alt="" />
             </div>
             <div className="contact-form">
               <div className="form">
