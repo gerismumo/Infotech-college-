@@ -13,15 +13,15 @@ const Home = () => {
   const navigate = useNavigate();
       const fadeImages = [
         {
-          url: 'https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+          url: '../../../infotech images/IMG-20231220-WA0803.jpg',
           caption: 'First Slide'
         },
         {
-          url: 'https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80',
+          url: '../../../infotech images/IMG-20231220-WA0789.jpg',
           caption: 'Second Slide'
         },
         {
-          url: 'https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+          url: '../../../infotech images/IMG-20231220-WA0804.jpg',
           caption: 'Third Slide'
         },
       ];
@@ -61,17 +61,17 @@ const Home = () => {
       const courses = [{
         id: 1,
         name: 'Certificate in Computer Studies',
-        image: '../../images/computerStudis.jpg'
+        image: '../../infotech images/IMG-20231220-WA0796.jpg'
       },
       {
         id: 2,
         name: 'Diploma in Human Resources',
-        image: '../../images/human.jpg',
+        image: '../../infotech images/IMG-20231220-WA0789.jpg',
       },
       {
         id: 3,
         name: 'Certificate in Secretarial',
-        image: '../../images/secretarial.jpg',
+        image: '../../infotech images/IMG-20231220-WA0803.jpg',
       },
     //   {
     //     id:4,

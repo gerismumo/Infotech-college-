@@ -22,10 +22,11 @@ const Footer = () => {
                         <h2>Links</h2>
                     </div>
                     <div className="links">
-                        <Link to="">Home</Link>
-                        <Link to="">About</Link>
-                        <Link to="">Courses</Link>
-                        <Link to="">Contact</Link>
+                        <Link to="/">Home</Link>
+                        <Link to="/about">About</Link>
+                        <Link to="/courses">Courses</Link>
+                        <Link to="/contact">Contact</Link>
+                        <Link to="/enroll">Enroll</Link>
                     </div>
                 </div>
             </div>

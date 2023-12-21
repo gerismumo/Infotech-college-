@@ -155,7 +155,7 @@ import Header from '../Header';
       id: 1,
       name: 'English, Kiswahili, French, German, Spanish',
       fees: '2,000',
-      image: '../../images/german.jpg',
+      image: '../../infotech images/IMG-20231220-WA0787.jpg',
     },
     {
       id: 2,
