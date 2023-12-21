@@ -26,7 +26,7 @@ const Home = () => {
         },
       ];
 
-      const initialText = 'INSTITUTE OF PROFESSIONAL STUDIES';
+      const initialText = 'INFOTECH INSTITUTE OF PROFESSIONAL STUDIES';
       const [displayText, setDisplayText] = useState('');
     
       useEffect(() => {
@@ -95,6 +95,25 @@ const Home = () => {
     const MoveToCourses = () => {
       navigate('/courses');
     }
+
+    const AboutText = `Welcome to Infotech Institute of professional studied, a place where persons from any station in life can realize their fullest potential!
+    To prospective students (and their parents), we want you to know that if you are looking for a solid education that will fully prepare you to succeed in a career and even more importantly in life in general, that you have come to the right place. IPS is for you! It is our firm commitment to offer our students excellence in higher education that is firmly grounded in positive moral values that are consistent with the best of the Christian tradition. we have a global outlook at IPS, with the best local and international faculty available. We have in any given academic term, students from other counties of origin. Among the exciting things happening at IPS that you would have an opportunity to look forward to are: Student and Faculty competitions, Experiential Learning activities, Career Services support, Mentorship and Leadership training, training in Design Thinking during the Impact Week, along with participation in many activities like Business Week, Impact Week, Culture Week, Holiness Week and so much more!
+    To our continuing students, thank you for choosing IPS. We want to serve you well. Let us know how we are doing. This opportunity you have to study at this level is a gift from God. Be a good steward of it!
+    To our alumni scattered all over the nation, we are so proud of you! You are making a difference and your success is a daily confirmation that we are producing what the market wants and needs. Check out our Alumni page and other social media for all the great ways to stay connected with your colleagues and your alma Mater.
+    To our friends and well-wishers, sponsors, and donors around the nation, thank you for believing in Infotech Institute of professional studied and for investing in the lives of some of the greatest young minds and hearts in the nation.
+    Indeed, what begins here transforms the nation!
+    Prof. Daniel Odhiambo
+    Director of studies – Academic Affairs`;
+
+    const truncateText = (start, end) => {
+     const truncate = AboutText.substring(start, end);
+     return truncate
+    }
+
+    const handleAbout = () => {
+      navigate('/about');
+    }
+
   return (
     <>
     <Header />
@@ -123,8 +142,8 @@ const Home = () => {
                 <div className="welcome-info">
                     <FontAwesomeIcon icon={faHouse} className='iconHome' size='2x'/>
                     <h2>WELCOME TO OUR COLLEGE</h2>
-                    <p>In 2018 INSTITUTE OF PROFESSIONAL STUDIES College
-                      was established.
+                    <p>In 2018 <span>INFOTECH INSTITUTE OF PROFESSIONAL STUDIES College</span>  
+                         was established.
                       The College has several  well-established 
                       Schools  namely; School of Business, School of Humanilities, School of computing
                     </p>
@@ -132,9 +151,10 @@ const Home = () => {
                 <div className="about-content">
                   <FontAwesomeIcon icon={faGraduationCap}  className='iconAbout'/>
                       <h2>What we Do</h2>
-                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam temporibus culpa ea minus quasi quia beatae! Saepe doloremque inventore sequi ad recusandae explicabo, quas consectetur eligendi molestias nulla ipsam.
-                      nesciunt?
-                    </p>
+                      <p>
+                        {truncateText(0, 295) + '....'}  <button className='read-more' onClick={handleAbout}>Read More</button>
+                      </p>
+
                   </div>
               </div>
                 <div className="vision-mission">
@@ -151,7 +171,13 @@ const Home = () => {
                     <div className="goals about-more">
                     <FontAwesomeIcon icon={faLightbulb} className='iconAbout' />
                         <h2>Goals</h2>
-                        <p>To offer quality training and development for professionals</p>
+                        <p>
+                        Promote the development and expansion of
+                         higher education opportunities through 
+                         initiation of new programmes and alternat
+                         ive modes of delivery using, among others
+                         , modern technologies.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -200,6 +226,16 @@ const Home = () => {
             </div>
             <div className="more-courses">
                     <p onClick={MoveToCourses}>More courses <FontAwesomeIcon icon={faArrowRight} className='moreIcon'/></p>
+            </div>
+            <div className="motto-slogan">
+              <div className="motto">
+                <p>Motto</p>
+                <p>" We believe. You belong here!! "</p>
+              </div>
+              <div className="slogan">
+                <p>Slogan</p>
+                <p>" Education for Citizenship "</p>
+              </div>
             </div>
         </div>
     </div>

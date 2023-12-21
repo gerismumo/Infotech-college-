@@ -46,9 +46,16 @@ const Contact = () => {
           <div className="location-map">
           
           </div>
-          <div className="inst-quote">
-            <p>College of choice for developing professionals</p>
-          </div>
+          <div className="motto-slogan">
+              <div className="motto">
+                <p>Motto</p>
+                <p>" We believe. You belong here!! "</p>
+              </div>
+              <div className="slogan">
+                <p>Slogan</p>
+                <p>" Education for Citizenship "</p>
+              </div>
+            </div>
         </div>
       </div>
       <Footer />

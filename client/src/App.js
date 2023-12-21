@@ -2,16 +2,10 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import './App.css';
 import Home from './pages/Home';
-import CoursesList from './pages/StaffPages/CoursesList';
-import EnrollmentList from './pages/StaffPages/EnrollmentList';
-import Lectures from './pages/StaffPages/Lectures';
-import Student from './pages/StaffPages/Student';
+import About from './pages/components/About';
 import Contact from './pages/components/Contact';
 import Courses from './pages/components/Courses';
 import Enroll from './pages/components/Enroll';
-import Login from './pages/components/Login';
-import StaffPortal from './pages/components/StaffPortal';
-import StudentPortal from './pages/components/StudentPortal';
 
 function App() {
   return (
@@ -21,6 +15,7 @@ function App() {
         <Route path='/courses' element={<Courses />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/enroll' element={<Enroll />} />
+        <Route path='/about' element={<About />} />
         {/* <Route path='/studentPortal' element={<StudentPortal />} /> */}
         {/* <Route path='/staffPortal' element={<StaffPortal />}>
           <Route path='' element={<Student />} />

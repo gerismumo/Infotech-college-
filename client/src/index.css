@@ -471,6 +471,10 @@ code {
   color: var(---white);
   font-weight: 900;
 }
+.about .welcome-info span{
+  font-weight: 600;
+  margin-right: 5px;
+}
 .about .about-content {
   border: 1px solid var(---lightPrimary);
   padding: 20px 20px;
@@ -482,6 +486,18 @@ code {
 .about .about-content .iconAbout {
   color: var(---accentColor);
   font-weight: 900;
+}
+.about .about-content button{
+  background-color: var(---primaryColor);
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 12px;
+  color: var(---white);
+  font-weight: 700;
+}
+.about .about-content button:hover {
+  background-color: var(---lightPrimary);
 }
 .about .vision-mission {
   display: flex;
@@ -622,7 +638,7 @@ code {
   display: flex;
   justify-content: flex-end;
   margin-right: 180px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .more-courses p{
@@ -767,7 +783,9 @@ code {
 .courses-page .other-courses {
   display: flex;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
+  margin-bottom: 50px;
+
 }
 .courses-page .courses-data{
   margin-top: 20px;
@@ -882,6 +900,7 @@ code {
   display: flex;
   justify-content: center;
   gap: 150px;
+  margin-bottom: 50px;
 }
 .contact-page .contact-image img {
   width: 700px;
@@ -890,6 +909,7 @@ code {
 .contact-page form {
   display: flex;
   flex-direction: column;
+ 
 }
 .contact-page form .name-email {
   display: flex;
@@ -965,6 +985,7 @@ code {
 }
 .enroll-page .enroll-content {
   margin-top: 190px;
+  margin-bottom: 70px;
 }
 
 .enroll-page .enroll-title {
@@ -1001,6 +1022,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .enroll-form form .form-parts {
@@ -1090,6 +1112,118 @@ code {
   font-weight: 800;
 }
 
+
+/* about page */
+.about-page{
+  display: flex;
+  flex-direction: column;
+}
+.about-page .about-page-content{
+  margin-top: 180px;
+  margin-bottom: 70px;
+}
+.about-page .about-title {
+  display: flex;
+  justify-content: center;
+  background-color: var(---whiteSmoke);
+  font-size: 25px;
+  font-weight: 900;
+  color: var(---primaryColor);
+}
+.about-page .about-side-title {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  align-items: center;
+  gap: 5px;
+  margin-top: 40px;
+}
+.about-page .about-side-title span {
+  width: 130px;
+  border-bottom: 2px solid var(---grey);
+}
+.about-page .about-side-title p {
+  color: var(---primaryColor);
+  font-size: 20px;
+  font-weight: 800;
+}
+.about-page .text-image {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 50px;
+  padding: 0 70px;
+  margin-bottom: 50px;
+}
+.about-page .text-image .text-about{
+  border: 1px solid var(---lightPrimary);
+  padding: 20px;
+}
+.about-page .text-image .text-about p {
+  line-height: 2rem;
+  font-weight: 450;
+  font-size: 18px;
+}
+.about-page .text-image .text-about span {
+  font-weight: 700;
+}
+.about-page .text-image .text-about .write-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.about-page .text-image .text-about .write-info p {
+  font-weight: 700;
+}
+.about-page .about-page-content .about-values  {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+}
+.about-page .about-page-content .about-values h2 {
+  color: var(---primaryColor);
+}
+.about-page .about-page-content .about-values .values{
+  margin-left: 20px;
+}
+.about-page .about-page-content .about-values .values p {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.about-page .about-page-content .about-values .values  .valueIcon {
+  color: var(---lightPrimary);
+  font-size: 20px;
+  margin-right: 10px;
+}
+.motto-slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.motto-slogan .motto,
+.motto-slogan .slogan{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.motto-slogan .motto p:first-child,
+.motto-slogan .slogan p:first-child {
+  color: var(---primaryColor);
+  font-size: 20px;
+  font-weight: 900;
+}
+.motto-slogan .motto p:last-child,
+.motto-slogan .slogan p:last-child {
+  color: var(---grey);
+  font-size: 20px;
+  font-weight: 700;
+  font-style:italic;
+}
+
 @media screen and (max-width: 800px) {
   
   .footer .footer-details {
@@ -1109,7 +1243,7 @@ code {
   }
   
   .home-content .site-info .site-name {
-    font-size: 16px;
+    font-size: 13px;
     padding-right: 40px;
   }
   .home-content .site-info button  {
@@ -1275,6 +1409,26 @@ code {
 .enroll-page .inst-quote{
   margin-top: 50px;
   margin-bottom: 20px;
+}
+
+/* about css */
+.about-page .about-page-content{
+  margin-top: 140px;
+}
+.about-page .about-side-title {
+  margin-left: 10px;
+}
+.about-page .about-side-title span {
+  width: 80px;
+}
+.about-page .text-image {
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 10px;
+  align-items: center;
+}
+.about-page .about-page-content .about-image img {
+  width: 300px;
 }
 } 
 

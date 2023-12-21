@@ -78,7 +78,7 @@ const Header = () => {
                     <div className="other-link">
                         <div className="other-part1">
                             <Link to="/">Home</Link>
-                            {/* <Link to="/">About</Link> */}
+                            <Link to="/about">About</Link>
                             <Link to="/courses">Courses</Link>
                             <Link to="/contact">Contact</Link>
                         </div>
@@ -122,6 +122,7 @@ const Header = () => {
                                 <div className="toggle-details">
                                     <div className="toggle-links">
                                         <Link to="/">Home</Link>
+                                        <Link to="/about">About</Link>
                                         <Link to="/courses">Courses</Link>
                                         <Link to="/contact">Contact</Link>
                                     </div>  

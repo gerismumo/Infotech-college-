@@ -15,7 +15,7 @@ const Footer = () => {
                     <p>Nairobi</p>
                     <p>P.O BOX 7964-0610 Nairobi</p>
                     <p>Tel: 0723 487 788 & 0714 661 166</p>
-                    <p>Email: infotechinstitude@gmail.com</p>
+                    <p>Email: infotechcollege3@gmail.com</p>
                 </div>
                 <div className="links-details">
                     <div className="link-title">
