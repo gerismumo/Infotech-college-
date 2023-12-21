@@ -235,7 +235,6 @@ const Enroll = () => {
     )
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log('formData',formData);
         const enroll_api = `${process.env.REACT_APP_API_URL}/api/enroll`;
 
         for(const key in formData) {

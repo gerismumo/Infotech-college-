@@ -19,7 +19,6 @@ routes.post('/enroll', async(req, res) => {
         const formData = req.body;
         const email = formData.email;
         const formDataArr = Array(formData);
-        console.log(formDataArr.length);
         if(formDataArr.length > 0) {
             let config = {
                 host: process.env.EMAIL_HOST,
@@ -113,6 +112,93 @@ routes.post('/enroll', async(req, res) => {
     }
 });
 
+routes.post('/messageUs', (req, res) => {
+    try {
+        const formData = req.body;
+        const email = formData.email;
+        const formDataArr = Array(formData);
+        console.log(formDataArr.length);
+
+        if(formDataArr.length > 0) {
+            let config = {
+                host: process.env.EMAIL_HOST,
+                port: process.env.EMAIL_PORT,
+                secure: process.env.EMAIL_SECURE,
+                auth: {
+                user: process.env.EMAIL_USERNAME,
+                pass: process.env.EMAIL_PASSWORD,
+                }
+            }
+            let transporter = nodemailer.createTransport(config);
+            const data = {
+                from: email,
+                to: process.env.EMAIL_USERNAME,
+                subject: 'Contact Board',
+                html: formData.text,
+            }
+            transporter.sendMail(data)
+            .then(() => {
+                const response = ({success: true, message:'Submitted Successfully'});
+
+                    const thankYouMessage = `
+                                            <html>
+                                            <head>
+                                                <style>
+                                                    body {
+                                                        font-family: 'Arial', sans-serif;
+                                                        text-align: center;
+                                                        background-color: #f4f4f4;
+                                                    }
+                                                    .container {
+                                                        max-width: 600px;
+                                                        margin: 20px auto;
+                                                        padding: 20px;
+                                                        background-color: #ffffff;
+                                                        border-radius: 8px;
+                                                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                                    }
+                                                    h1 {
+                                                        color: #007bff;
+                                                    }
+                                                    p {
+                                                        color: #333;
+                                                    }
+                                                </style>
+                                            </head>
+                                            <body>
+                                                <div class="container">
+                                                    <h1>Thank You for Your Contacting Us!</h1>
+                                                    <p>We appreciate your interest in our program. Your Message has been received successfully.</p>
+                                                    <p>Best regards,<br>Infotech institute of professional studies </p>
+                                                </div>
+                                            </body>
+                                            </html>
+                                        `;
+                    const thankYouData = {
+                        from: process.env.EMAIL_USERNAME,
+                        to: email,
+                        subject: 'Contact Board',
+                        html: thankYouMessage,
+                    }
+                    transporter.sendMail(thankYouData)
+                    .then(() => {
+                        res.json(response);
+                      })
+                      .catch(error => {
+                        res.json({success: false, message: 'Error submitting information'});
+                      });
+              })
+              .catch(error => {
+                res.json({success: false, message: 'Error submitting information'});
+              });
+        }else {
+            res.json({success: false, message: "Please fill the enrollment form"})
+        }
+        // console.log(formData);
+    }catch (error) {
+        res.json({success: false, message: error.message});
+    }
+});
 routes.post('/login', async(req, res) => {
     try{
         const formData = req.body;
