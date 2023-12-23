@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="footer-details">
             <div className="address-details">
                 <div className="address">
-                    <div className="footer-logo">
+                    <div className="footer-logo" onClick={handleHomePage}>
                         <img src="../../images/infotectlogo.jpg" alt="" />
                     </div>
                     <p>Nairobi</p>
