@@ -1,9 +1,15 @@
 import { faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const [currentYear, setCurrentYear] = useState(null);
+
+    useEffect(() => {
+        const date = new Date().getFullYear();
+        setCurrentYear(date);
+    }, []);
   return (
     <div className="footer">
         <div className="footer-details">
@@ -38,7 +44,7 @@ const Footer = () => {
         </div>
         <div className="bottom-links">
             <div className="copy-right">
-                <p>&copy; {new Date().getFullYear} info Tech. All rights reserved.</p>
+                <p>&copy; {currentYear} info Tech. All rights reserved.</p>
             </div>
             <div className="developer-details">
                <p>Designed by <span>Winnie</span></p> 
