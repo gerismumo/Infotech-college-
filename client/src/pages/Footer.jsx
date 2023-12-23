@@ -1,15 +1,37 @@
 import { faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    const navigate = useNavigate();
     const [currentYear, setCurrentYear] = useState(null);
 
     useEffect(() => {
         const date = new Date().getFullYear();
         setCurrentYear(date);
     }, []);
+
+    const handleHomePage = () => {
+        navigate('/');
+        window.scroll(0,0);
+    }
+    const handleAboutPage = () => {
+        navigate('/about');
+        window.scroll(0,0);
+    }
+    const handleCoursePage = () => {
+        navigate('/courses');
+        window.scroll(0,0);
+    }
+    const handleContactPage = () => {
+        navigate('/contact');
+        window.scroll(0,0);
+    }
+    const handleEnrollPage = () => {
+        navigate('/enroll');
+        window.scroll(0,0);
+    }
   return (
     <div className="footer">
         <div className="footer-details">
@@ -28,11 +50,11 @@ const Footer = () => {
                         <h2>Links</h2>
                     </div>
                     <div className="links">
-                        <Link to="/">Home</Link>
-                        <Link to="/about">About</Link>
-                        <Link to="/courses">Courses</Link>
-                        <Link to="/contact">Contact</Link>
-                        <Link to="/enroll">Enroll</Link>
+                        <p onClick={handleHomePage}>Home</p>
+                        <p onClick={handleAboutPage}>About</p>
+                        <p onClick={handleCoursePage}>Courses</p>
+                        <p onClick={handleEnrollPage}>Enroll</p>
+                        <p onClick={handleContactPage}>Contact</p>
                     </div>
                 </div>
             </div>

@@ -301,12 +301,12 @@ code {
   flex-direction: column;
   gap: 20px;
 }
-.footer .footer-details .links a{
+.footer .footer-details .links p{
   text-decoration: none;
   color: var(---whiteSmoke);
   font-weight: 500;
 }
-.footer .footer-details .links a:hover {
+.footer .footer-details .links p:hover {
   color: var(---lightBlue);
 }
 .footer .bottom-links {

@@ -97,6 +97,11 @@ const Home = () => {
       window.scroll(0,0);
     }
 
+    const handleEnroll = () => {
+      navigate('/enroll');
+      window.scroll(0,0);
+    }
+
     const AboutText = `Welcome to Infotech Institute of professional studied, a place where persons from any station in life can realize their fullest potential!
     To prospective students (and their parents), we want you to know that if you are looking for a solid education that will fully prepare you to succeed in a career and even more importantly in life in general, that you have come to the right place. IPS is for you! It is our firm commitment to offer our students excellence in higher education that is firmly grounded in positive moral values that are consistent with the best of the Christian tradition. we have a global outlook at IPS, with the best local and international faculty available. We have in any given academic term, students from other counties of origin. Among the exciting things happening at IPS that you would have an opportunity to look forward to are: Student and Faculty competitions, Experiential Learning activities, Career Services support, Mentorship and Leadership training, training in Design Thinking during the Impact Week, along with participation in many activities like Business Week, Impact Week, Culture Week, Holiness Week and so much more!
     To our continuing students, thank you for choosing IPS. We want to serve you well. Let us know how we are doing. This opportunity you have to study at this level is a gift from God. Be a good steward of it!
@@ -131,7 +136,7 @@ const Home = () => {
                               <div className="site-name">
                                 <h1>{displayText}</h1>
                               </div>
-                              <button>Apply Now</button>
+                              <button onClick={handleEnroll}>Apply Now</button>
                           </div>
                         </div>
                         ))}
