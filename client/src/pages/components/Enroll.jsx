@@ -239,7 +239,7 @@ const Enroll = () => {
 
         for(const key in formData) {
             if(formData[key] === '') {
-                toast.error(`${key} is empty, Please fill`);
+                toast.error(`Please fill all fields`);
                 return;
             }
         } 
