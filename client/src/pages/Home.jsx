@@ -61,7 +61,7 @@ const Home = () => {
       const courses = [{
         id: 1,
         name: 'Certificate in Computer Studies',
-        image: '../../infotech images/IMG-20231220-WA0796.jpg'
+        image: '../../infotech images/computerlab.jpg'
       },
       {
         id: 2,
