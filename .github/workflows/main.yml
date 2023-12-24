@@ -18,12 +18,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd ../client
+        cd client
         npm install
-    
+
     - name: Build React app
       run: |
-        cd ../client
+        cd client
         npm run build
 
     - name: 📂 Deploy to cPanel
