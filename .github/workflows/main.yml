@@ -26,7 +26,7 @@ jobs:
         cd client
         npm run build
 
-    - name: 📂 Deploy to cPanel
+    - name: 📂 Deploy to cPanel frontend
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server:  ftp.tsidn.org
