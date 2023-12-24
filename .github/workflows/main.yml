@@ -16,17 +16,17 @@ jobs:
     #   with:
     #     node-version: 14
 
-    # - name: Install dependencies
-    #   run: |
-    #     cd client
-    #     npm install
-    #     cd server
-    #     npm install
+    - name: Install dependencies
+      run: |
+        cd client
+        npm install
+        cd server
+        npm install
     
-    # - name: Build React app
-    #   run: |
-    #     cd client
-    #     npm run build
+    - name: Build React app
+      run: |
+        cd client
+        npm run build
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
