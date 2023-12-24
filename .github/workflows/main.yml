@@ -25,7 +25,7 @@ jobs:
       run: |
         cd server
         npm install
-        
+
     - name: Build React app
       run: |
         cd client
@@ -39,7 +39,7 @@ jobs:
         server:  ftp.tsidn.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        source: cd client/build/
+        local-dir: client
         target: /home/tsidnorg/infotech.tsidn.org/
     
     
