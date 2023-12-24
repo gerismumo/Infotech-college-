@@ -17,6 +17,6 @@ jobs:
         server:  ftp.tsidn.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /home/tsidnorg/infotech.tsidn.org
+        server-dir: /home/tsidnorg/infotech.tsidn.org/
     
     
