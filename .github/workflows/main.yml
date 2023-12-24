@@ -41,14 +41,14 @@ jobs:
       run: |
           mkdir deploy
           cp -r client/build/* deploy/
-          mv deploy/* .
+
     - name: 📂 Deploy to cPanel frontend
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server:  ftp.tsidn.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        source: ./
+        source: deploy/* .
         target: /home/tsidnorg/infotech.tsidn.org/
     
     
