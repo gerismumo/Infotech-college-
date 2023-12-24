@@ -11,7 +11,6 @@ const createConnection = require('./database/db');
 
 const port = process.env.PORT;
 const routes = require('./routes/routes');
-
 app.use('/api', routes);
 const startServer = async () => {
     // await createConnection();
