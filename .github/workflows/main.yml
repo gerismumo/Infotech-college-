@@ -37,10 +37,10 @@ jobs:
     #       cp -r client/build/* deploy/
     - name: List contents of build directory
       run: ls -R client/build/
-    - name: 📂 Copy build artifacts
-      run: |
-          mkdir deploy
-          cp -r client/build/* deploy/
+    # - name: 📂 Copy build artifacts
+    #   run: |
+    #       mkdir deploy
+    #       cp -r client/build/* deploy/
 
     - name: 📂 Deploy to cPanel frontend
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -48,7 +48,7 @@ jobs:
         server:  ftp.tsidn.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        source: deploy
+        source: client
         target: /home/tsidnorg/infotech.tsidn.org/
     
     
