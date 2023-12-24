@@ -26,7 +26,8 @@ const Home = () => {
         },
       ];
 
-      const initialText = 'INFOTECH INSTITUTE OF PROFESSIONAL STUDIES';
+      // const initialText = 'INFOTECH INSTITUTE OF PROFESSIONAL STUDIES';
+      const initialText ='Testing the web app';
       const [displayText, setDisplayText] = useState('');
     
       useEffect(() => {
