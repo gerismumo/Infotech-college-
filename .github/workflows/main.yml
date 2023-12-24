@@ -41,14 +41,14 @@ jobs:
       run: |
        pwd
        ls -R client/build/
-       
+
     - name: 📂 Deploy to cPanel frontend
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server:  ftp.tsidn.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        source: client/build/
+        source: build/
         target: /home/tsidnorg/infotech.tsidn.org/
     
     
