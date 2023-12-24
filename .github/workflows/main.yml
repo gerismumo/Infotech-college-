@@ -35,6 +35,8 @@ jobs:
     #   run: |
     #       mkdir deploy
     #       cp -r client/build/* deploy/
+    - name: List contents of build directory
+      run: ls -R client/build/
 
     - name: 📂 Deploy to cPanel frontend
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
