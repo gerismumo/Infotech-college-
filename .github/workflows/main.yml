@@ -26,9 +26,10 @@ jobs:
         cd client
         npm run build
 
-    - name: 📂 Compress build files
+    - name: Extract Build Files
       run: |
-        tar czf build.tar.gz -C client/build .
+        cd client/build
+        unzip -q '*'
 
     - name: 📂 Deploy to cPanel frontend
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -36,7 +37,7 @@ jobs:
         server:  ftp.tsidn.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        source: build.tar.gz
+        source: client/build/*
         target: /home/tsidnorg/infotech.tsidn.org/
     
     
