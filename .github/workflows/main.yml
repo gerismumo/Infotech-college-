@@ -11,16 +11,16 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    # - name: Install Node.js
-    #   uses: actions/setup-node@v4
-    #   with:
-    #     node-version: 14
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 14
 
     - name: Install dependencies
       run: |
-        cd client
+        cd /home/tsidnorg/infotech.tsidn.org/client
         npm install
-        cd server
+        cd /home/tsidnorg/infotech.tsidn.org/server
         npm install
     
     - name: Build React app
