@@ -39,7 +39,7 @@ jobs:
         server:  ftp.tsidn.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./client/
+        local-dir: ./client/build
         target: /home/tsidnorg/infotech.tsidn.org/
     
     
