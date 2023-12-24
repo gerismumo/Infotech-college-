@@ -199,23 +199,23 @@ const Enroll = () => {
         "capital": "Nairobi City"
     }]
 
-    const [countiesList, setCountiesList] = useState([]);
-    const counties_api = `${process.env.REACT_APP_API_URL}/api/counties`;
+    // const [countiesList, setCountiesList] = useState([]);
+    // const counties_api = `${process.env.REACT_APP_API_URL}/api/counties`;
 
-    useEffect(() => {
-        const fetchCounties = async() => {
-            try {
-                const response = await axios.get(counties_api);
-                const success = response.data.success;
-                if(success) {
-                    setCountiesList(response.data.data);
-                }
-            }catch(error) {
-                console.log(error.message);
-            }
-        }
-        fetchCounties();
-    },[counties_api]);
+    // useEffect(() => {
+    //     const fetchCounties = async() => {
+    //         try {
+    //             const response = await axios.get(counties_api);
+    //             const success = response.data.success;
+    //             if(success) {
+    //                 setCountiesList(response.data.data);
+    //             }
+    //         }catch(error) {
+    //             console.log(error.message);
+    //         }
+    //     }
+    //     fetchCounties();
+    // },[counties_api]);
 
     // console.log(countiesList);
     const[formData, setFormData] = useState(

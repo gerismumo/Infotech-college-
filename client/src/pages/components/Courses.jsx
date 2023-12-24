@@ -185,108 +185,108 @@ import Header from '../Header';
 const Courses = () => {
   const navigate = useNavigate();
 
-    const courses = [
-      {
-      id: 1,
-      name: 'Certificate in Computer Studies',
-      image: '../../images/computerStudis.jpg'
-    },
-    {
-      id: 2,
-      name: 'Diploma in Human Resources',
-      image: '../../images/human.jpg',
-    },
-    {
-      id: 3,
-      name: 'Certificate in Secretarial',
-      image: '../../images/secretarial.jpg',
-    },
-    {
-      id:4,
-      name: 'Diploma in Business Management',
-      image: '../../images/businessmanagemnet.jpg',
-    },
-    {
-      id: 5,
-      name: 'Certificate in Digital Marketing',
-      image: '../../images/Digitalmarket.jpg'
-    },
-    {
-      id: 6,
-      name: 'Certificate in Computer Studies',
-      image: '../../images/computerStudis.jpg'
-    },
-    {
-      id: 7,
-      name: 'Diploma in Human Resources',
-      image: '../../images/human.jpg',
-    },
-    {
-      id: 8,
-      name: 'Certificate in Secretarial',
-      image: '../../images/secretarial.jpg',
-    },
-    {
-      id:9,
-      name: 'Diploma in Business Management',
-      image: '../../images/businessmanagemnet.jpg',
-    },
-    {
-      id: 10,
-      name: 'Certificate in Digital Marketing',
-      image: '../../images/Digitalmarket.jpg'
-    },
-    {
-      id: 11,
-      name: 'Certificate in Computer Studies',
-      image: '../../images/computerStudis.jpg'
-    },
-    {
-      id: 12,
-      name: 'Diploma in Human Resources',
-      image: '../../images/human.jpg',
-    },
-    {
-      id: 13,
-      name: 'Certificate in Secretarial',
-      image: '../../images/secretarial.jpg',
-    },
-    {
-      id:14,
-      name: 'Diploma in Business Management',
-      image: '../../images/businessmanagemnet.jpg',
-    },
-    {
-      id: 15,
-      name: 'Certificate in Digital Marketing',
-      image: '../../images/Digitalmarket.jpg'
-    },
-    {
-      id: 16,
-      name: 'Certificate in Computer Studies',
-      image: '../../images/computerStudis.jpg'
-    },
-    {
-      id: 17,
-      name: 'Diploma in Human Resources',
-      image: '../../images/human.jpg',
-    },
-    {
-      id: 18,
-      name: 'Certificate in Secretarial',
-      image: '../../images/secretarial.jpg',
-    },
-    {
-      id: 19,
-      name: 'Diploma in Business Management',
-      image: '../../images/businessmanagemnet.jpg',
-    },
-    {
-      id: 20,
-      name: 'Certificate in Digital Marketing',
-      image: '../../images/Digitalmarket.jpg'
-    }
-  ]
+  //   const courses = [
+  //     {
+  //     id: 1,
+  //     name: 'Certificate in Computer Studies',
+  //     image: '../../images/computerStudis.jpg'
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Diploma in Human Resources',
+  //     image: '../../images/human.jpg',
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Certificate in Secretarial',
+  //     image: '../../images/secretarial.jpg',
+  //   },
+  //   {
+  //     id:4,
+  //     name: 'Diploma in Business Management',
+  //     image: '../../images/businessmanagemnet.jpg',
+  //   },
+  //   {
+  //     id: 5,
+  //     name: 'Certificate in Digital Marketing',
+  //     image: '../../images/Digitalmarket.jpg'
+  //   },
+  //   {
+  //     id: 6,
+  //     name: 'Certificate in Computer Studies',
+  //     image: '../../images/computerStudis.jpg'
+  //   },
+  //   {
+  //     id: 7,
+  //     name: 'Diploma in Human Resources',
+  //     image: '../../images/human.jpg',
+  //   },
+  //   {
+  //     id: 8,
+  //     name: 'Certificate in Secretarial',
+  //     image: '../../images/secretarial.jpg',
+  //   },
+  //   {
+  //     id:9,
+  //     name: 'Diploma in Business Management',
+  //     image: '../../images/businessmanagemnet.jpg',
+  //   },
+  //   {
+  //     id: 10,
+  //     name: 'Certificate in Digital Marketing',
+  //     image: '../../images/Digitalmarket.jpg'
+  //   },
+  //   {
+  //     id: 11,
+  //     name: 'Certificate in Computer Studies',
+  //     image: '../../images/computerStudis.jpg'
+  //   },
+  //   {
+  //     id: 12,
+  //     name: 'Diploma in Human Resources',
+  //     image: '../../images/human.jpg',
+  //   },
+  //   {
+  //     id: 13,
+  //     name: 'Certificate in Secretarial',
+  //     image: '../../images/secretarial.jpg',
+  //   },
+  //   {
+  //     id:14,
+  //     name: 'Diploma in Business Management',
+  //     image: '../../images/businessmanagemnet.jpg',
+  //   },
+  //   {
+  //     id: 15,
+  //     name: 'Certificate in Digital Marketing',
+  //     image: '../../images/Digitalmarket.jpg'
+  //   },
+  //   {
+  //     id: 16,
+  //     name: 'Certificate in Computer Studies',
+  //     image: '../../images/computerStudis.jpg'
+  //   },
+  //   {
+  //     id: 17,
+  //     name: 'Diploma in Human Resources',
+  //     image: '../../images/human.jpg',
+  //   },
+  //   {
+  //     id: 18,
+  //     name: 'Certificate in Secretarial',
+  //     image: '../../images/secretarial.jpg',
+  //   },
+  //   {
+  //     id: 19,
+  //     name: 'Diploma in Business Management',
+  //     image: '../../images/businessmanagemnet.jpg',
+  //   },
+  //   {
+  //     id: 20,
+  //     name: 'Certificate in Digital Marketing',
+  //     image: '../../images/Digitalmarket.jpg'
+  //   }
+  // ]
 
   const handleEnroll = () => {
     navigate('/enroll');

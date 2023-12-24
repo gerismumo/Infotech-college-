@@ -131,7 +131,7 @@ const Home = () => {
                     <Fade duration={1000}>
                         {fadeImages.map((fadeImage, index) => (
                         <div key={index} className='slide'>
-                            <img  src={fadeImage.url} />
+                            <img  src={fadeImage.url} alt=''/>
                             <div className="site-info">
                               <div className="site-name">
                                 <h1>{displayText}</h1>

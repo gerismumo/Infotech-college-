@@ -8,27 +8,27 @@ const Header = () => {
     const navigate = useNavigate();
 
     const[toggleOpen, setToggleOpen] = useState(false);
-    const [openPortal, setOpenPortal] = useState(false);
-    const [adminList, setAdminList] = useState(false);
+    // const [openPortal, setOpenPortal] = useState(false);
+    // const [adminList, setAdminList] = useState(false);
 
     const handleBackHome = () => {
         navigate('/');
     }
 
-    const handleDropDown = () => {
-        setOpenPortal(true);
-    }
+    // const handleDropDown = () => {
+    //     setOpenPortal(true);
+    // }
     
-    const handleDropDownClose = () => {
-        setOpenPortal(false);
-    }
+    // const handleDropDownClose = () => {
+    //     setOpenPortal(false);
+    // }
 
-    const handleDropDownAdmin = () => {
-        setAdminList(true);
-    }
-    const handleDropDownAdminClose = () => {
-        setAdminList(false);
-    }
+    // const handleDropDownAdmin = () => {
+    //     setAdminList(true);
+    // }
+    // const handleDropDownAdminClose = () => {
+    //     setAdminList(false);
+    // }
 
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
@@ -59,7 +59,7 @@ const Header = () => {
       }
 
   return (
-    <div className='header' onMouseLeave={handleDropDownClose}>
+    <div className='header' >
         <div className="social-links">
             <div className="lin">
 
