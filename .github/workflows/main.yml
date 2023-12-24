@@ -20,6 +20,8 @@ jobs:
       run: |
         cd client
         npm install
+        cd ../server
+        npm install
 
     - name: Build React app
       run: |
