@@ -53,5 +53,5 @@ jobs:
         server:  ftp.tsidn.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: server
+        local-dir: server/
         target: /home/tsidnorg/apiinfotech.tsidn.org/
