@@ -51,7 +51,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server:  ftp.tsidn.org
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        username: ${{ secrets.FTP_USERNAME_SERVER }}
+        password: ${{ secrets.FTP_SERVER_PASSWORD}}
         local-dir: server/
         target: /home/tsidnorg/apiinfotech.tsidn.org/
