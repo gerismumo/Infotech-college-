@@ -23,7 +23,7 @@ jobs:
        
     - name: Install dependencies for server
       run: |
-        cd server
+        cd ../server
         npm install
 
     - name: Build React app
