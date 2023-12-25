@@ -31,16 +31,9 @@ jobs:
         cd client
         npm run build
 
-    # - name: 📂 Copy build artifacts
-    #   run: |
-    #       mkdir deploy
-    #       cp -r client/build/* deploy/
     - name: List contents of build directory
       run: ls -R client/build/
-    # - name: 📂 Copy build artifacts
-    #   run: |
-    #       mkdir deploy
-    #       cp -r client/build/* deploy/
+   
 
     - name: 📂 Deploy to cPanel frontend
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -50,5 +43,15 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: client/build/
         target: /home/tsidnorg/infotech.tsidn.org/
-    
-    
+
+    - name: List contents of server directory
+      run: ls -R server/
+
+    - name: 📂 Deploy to cPanel server code
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server:  ftp.tsidn.org
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: server
+        target: /home/tsidnorg/apiinfotech.tsidn.org/
