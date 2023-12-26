@@ -390,7 +390,7 @@ code {
   display: flex;
   font-family: 'Signika', sans-serif;
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 22px;
   color: var(---darkBlack);
   font-weight: 900;
   flex-wrap: wrap;
@@ -408,8 +408,8 @@ code {
   border-radius: 50px;
   font-size: 18px;
   font-weight: 900;
-  border: 3px solid var(---primaryColor);
-  color: var(---darkBlack);
+  border: 3.5px solid var(---primaryColor);
+  color: var(---white);
   width: 180px;
   margin-left: 80px;
 }
