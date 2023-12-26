@@ -21,10 +21,10 @@ jobs:
         cd client
         npm install
        
-    - name: Install dependencies for server
-      run: |
-        cd server
-        npm install
+    # - name: Install dependencies for server
+    #   run: |
+    #     cd server
+    #     npm install
 
     - name: Build React app
       run: |
