@@ -174,6 +174,7 @@ import Header from '../Header';
       name: 'KCSE/KCPE Private Candidates',
       fees: '3000',
       image: '../../images/tutions.jpg',
+      
     },
     {
       id: 5,

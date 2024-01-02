@@ -21,14 +21,14 @@ jobs:
         cd client
         npm install
        
-    # - name: Install dependencies for server
-    #   run: |
-    #     cd server
-    #     npm install
-    # - name: Remove package-lock.json from deployed server code
-    #   run: |
-    #     cd server/
-    #     rm package-lock.json
+    - name: Install dependencies for server
+      run: |
+        cd server
+        npm install
+    - name: Remove package-lock.json from deployed server code
+      run: |
+        cd server/
+        rm package-lock.json
         
     - name: Build React app
       run: |
