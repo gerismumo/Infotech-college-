@@ -13,15 +13,16 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 
-const createConnection = require('./database/db');
+
 
 const port = process.env.PORT;
 const routes = require('./routes/routes');
+
 app.use('/api', routes);
-const startServer = async () => {
+
     // await createConnection();
-    app.listen( port, () => {
-        console.log(`Server listening on Port ${port}`);
-    })
-}
-startServer();
+app.listen( port, () => {
+    console.log(`Server listening on Port ${port}`);
+})
+
+
