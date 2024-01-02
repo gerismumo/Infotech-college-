@@ -25,10 +25,10 @@ jobs:
     #   run: |
     #     cd server
     #     npm install
-    - name: Remove package-lock.json from deployed server code
-      run: |
-        cd server/
-        rm package-lock.json
+    # - name: Remove package-lock.json from deployed server code
+    #   run: |
+    #     cd server/
+    #     rm package-lock.json
         
     - name: Build React app
       run: |
